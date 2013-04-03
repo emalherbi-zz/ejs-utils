@@ -250,3 +250,94 @@
 	</div>
 </body>
 </html>
+<script>
+$(document).ready(function() {
+	$('#error-cpf').hide();
+	$('#cpf').keyup(function()
+	{
+		var cpf = $('#cpf').val();
+		cpf = Dig.only(cpf);
+
+		if ( CPF.valida(cpf) ) {
+			$('#error-cpf').text('Válido');             
+			$('#error-cpf').css('color', 'green');   			
+		} else {
+			$('#error-cpf').text('Inválido');             
+			$('#error-cpf').css('color', 'red');   
+		} 
+
+		$('#error-cpf').show(); 			
+	});
+	
+	$('#error-cnpj').hide();  	
+	$('#cnpj').keyup(function()
+	{
+		var cnpj = $('#cnpj').val();
+		cnpj = Dig.only(cnpj);
+
+		if ( CNPJ.valida(cnpj) ) {
+			$('#error-cnpj').text('Válido');             
+			$('#error-cnpj').css('color', 'green');   			
+		} else {
+			$('#error-cnpj').text('Inválido');             
+			$('#error-cnpj').css('color', 'red');   
+		} 
+
+		$('#error-cnpj').show(); 			
+	});
+	
+	$('#limpaForm').click(function()
+	{
+		Form.clear('frm');	
+	});	
+	
+	var vlr = Table.calculateBr('table', '3');
+	$('#total').text( vlr );	
+	
+	$('#limpaTable').click(function()
+	{
+		Table.remove('table');	
+	});
+
+	$('#select-option').change(function() {
+		var value = Select.option_select_attr('select-option', 'tipo');   
+		$('#status-option').text( value );
+	});
+	
+	$('#removeSelectOption').click(function()
+	{
+		Select.remove_selected_option('select-option');	
+	});		
+	
+	$('#limpaSelectOptions').click(function()
+	{
+		Select.remove_all_option('select-option');	
+	});	
+	
+	$('#btn-alert-validate').click(function()
+	{
+		Alert.show('input-alert', 'Campo Obrigatório!');	
+	});
+	
+	$('#chkEnabledField').click(function() {
+		if ( document.getElementById("chkEnabledField").checked ) {
+			Input.enabledField('enabledField');
+		} else {
+			Input.readOnly('enabledField');
+		}    
+	});	
+	
+	$('#status-zeros').hide();  	
+	$('#addZeros').keyup(function()
+	{
+		var vlr = $('#addZeros').val();
+		vlr = Dig.only(vlr);
+
+		var str = Zeros.left(vlr, '10'); 
+
+		$('#status-zeros').text( str );             
+		$('#status-zeros').css('color', 'green');   			
+		$('#status-zeros').show(); 			
+	});	
+});	
+</script>
