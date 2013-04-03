@@ -84,7 +84,156 @@
 					<h4>Alert</h4> -  Se não validou o <span style="color:red;">retorno é um Alert e false</span> se não <span style="color:red;">true</span>  
 					<pre><code>Alert.show(id, msg)</code></pre>
 				</p>	
-
+		<!-- EXEMPLO -->
+		<h2> Exemplo </h2>
+		<hr />
+		<div>
+			<ul>
+				<li>Utilizando máscara nos campos do formulário</li>
+				<li>Validando o CPF e CNPJ</li>
+				<li>Habilitar ou Desabilitar um campo Input</li>
+				<li>Limpando todos os campos do formulário</li>
+			<ul>
+		</div>
+		<form id="frm" name="frm" >
+			<div>
+				<label for="data" >Data</label>
+				<input type="text" id="data" name="data" onkeydown="Mask.mascara(this, Mask.mdata)" />				
+			</div>
+			<div>
+				<label for="hora" >Hora</label>
+				<input type="text" id="hora" name="hora" onkeydown="Mask.mascara(this, Mask.mhora)" />
+			</div>
+			<div>
+				<label for="telefone" >Telefone</label>
+				<input type="text" id="telefone" name="telefone" onkeydown="Mask.mascara(this, Mask.mtelefone)" />
+			</div>
+			<div>
+				<label for="cep" >CEP</label>
+				<input type="text" id="cep" name="cep" onkeydown="Mask.mascara(this, Mask.mcep)" />
+			</div>
+			<div>
+				<label for="cpf" >CPF</label>
+				<input type="text" id="cpf" name="cpf" onkeydown="Mask.mascara(this, Mask.mcpf)" />
+				<span id="error-cpf" >Inválido</span>
+			</div>
+			<div>
+				<label for="cnpj" >CNPJ</label>
+				<input type="text" id="cnpj" name="cnpj" onkeydown="Mask.mascara(this, Mask.mcnpj)" />
+				<span id="error-cnpj" >Inválido</span>				
+			</div>
+			<div>
+				<label for="nros" >Numeros</label>
+				<input type="text" id="nros" name="nros" onkeydown="Mask.mascara(this, Mask.mnumeros)" />
+			</div>
+			<div>
+				<label for="valorUS" >Valor US</label>
+				<input type="text" id="valorUS" name="valorUS" onkeydown="Mask.mascara(this, Mask.mvalor)" />
+			</div>
+			<div>
+				<label for="valorBR" >Valor BR</label>
+				<input type="text" id="valorBR" name="valorBR" onkeydown="Mask.mascara(this, Mask.mvalorbr)" />
+			</div>
+			<div>
+				<label for="chkEnabledField" >Ativar Input
+					<input id="chkEnabledField" name="chkEnabledField" type="checkbox" value="0" checked="checked" />
+				</label>
+				<input type="text" id="enabledField" name="enabledField" />
+			</div>	
+			<div>
+				<label for="addZeros" >Adicionar Zeros a Esquerda</label>
+				<input type="text" id="addZeros" name="addZeros" />
+				<span id="status-zeros" ></span>					
+			</div>
+			<div>
+				<label for="limpaForm" >Limpa Campos Formulário</label>
+				<input type="button" id="limpaForm" name="limpaForm" value="Limpar" />
+			</div>
+		</form>
+		<hr />
+		<div>
+			<ul>
+				<li>Calculando o Total da Tabela</li>
+				<li>Remover Tabela</li>
+			<ul>
+		</div>
+		<div style="margin-left:50px; padding-bottom:10px;">
+			<table id="table" name="table" width="500px" border="1" cellpadding="2" cellspacing="2">
+				<thead>
+					<tr>
+						<th><label>Código</label></th>
+						<th><label>Nome</label></th>
+						<th><label>Valor</label></th>
+					</tr>
+				</thead>
+				<tr>
+					<td><label>0001</label></td>
+					<td><label>Teste 1</label></td>
+					<td align="right" >200,71</td>
+				</tr>
+				<tr>
+					<td><label>0002</label></td>
+					<td><label>Teste 2</label></td>
+					<td align="right" >252,01</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right" >Valor Total - Calculado pelo Plugin</td>
+					<td align="right" >
+						<label id="total" name="total" >0,00</label>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<label for="limpaTable" >Limpar Tabela</label>
+				<input type="button" id="limpaTable" name="limpaTable" value="Limpar" />
+			</div>			
+		</div>
+		<hr />
+		<div>
+			<ul>
+				<li>Selecionar um Atributo do Select</li>
+			</ul>
+			<ul>
+				<li>Remover o item selecionado</li>
+			</ul>
+			<ul>
+				<li>Remover todos os itens selecionados</li>
+			</ul>			
+		</div>
+		<div style="margin-left:50px; padding-bottom:10px;">
+			<select id="select-option" name="select-option" >
+				<option value="1" tipo="Teste 1" >Atributo Tipo - Teste 1</option>
+				<option value="1" tipo="Teste 2" >Atributo Tipo - Teste 2</option>
+				<option value="1" tipo="Teste 3" >Atributo Tipo - Teste 3</option>
+				<option value="1" tipo="Teste 4" >Atributo Tipo - Teste 4</option>
+			</select>	
+			<span id="status-option" ></span>
+			<div style="clear:both;">
+				<label for="removeSelectOption" >Remove Opção Selecionada do Select</label>
+				<input type="button" id="removeSelectOption" name="removeSelectOption" value="Limpar" />
+			</div>	
+			<div style="clear:both;">
+				<label for="limpaSelectOptions" >Limpar Opções Select</label>
+				<input type="button" id="limpaSelectOptions" name="limpaSelectOptions" value="Limpar" />
+			</div>			
+		</div>
+		<hr />
+		<div>
+			<ul>
+				<li>Msg de Erro se não informado nada</li>
+			</ul>
+		</div>
+		<div style="margin-left:50px; padding-bottom:10px;">
+			<div>
+				<label for="input-alert" >Informe </label>
+				<input type="text" id="input-alert" name="input-alert" />
+			</div>
+			<div style="clear:both;">
+				<label for="btn-alert-validate" >Validar Input</label>
+				<input type="button" id="btn-alert-validate" name="btn-alert-validate" value="Validar" />
+			</div>				
+		</div>
+		
 				<h2>Autores e Contribuições</h2>
 				<p>Eduardo Malherbi Martins (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>).</p>
 			</section>
