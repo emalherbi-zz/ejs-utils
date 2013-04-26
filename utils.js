@@ -126,7 +126,9 @@ var Dig =
 /* positions in specific div */
 var Div = {
 	go : function(id) {
-		$(document).scrollTop( $("#"+id).offset().top );  
+		$('#'+id).slideToggle('slow', function() {
+    			$('html, body').animate({scrollTop:$("#"+id).offset().top}, 'slow');	
+		});		
 		
 		return true;
 	}
