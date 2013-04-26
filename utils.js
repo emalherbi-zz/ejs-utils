@@ -263,3 +263,12 @@ var Alert = {
 		return true;
 	}
 };
+
+var Div = {
+	go : function(id) {
+		$(document).scrollTop( $("#"+id).offset().top );  
+		
+		return true;
+	}
+};
+
