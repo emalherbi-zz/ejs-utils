@@ -1,6 +1,33 @@
+/* A */
+/* Alert Show */
+var Alert = {
+	show : function(id, msg) {
+		if ( $('#'+id).val() == 0 ) 
+		{
+			alert( msg );
+			$('#'+id).focus();
+			return false;
+		}	
+		
+		return true;
+	}
+};
+
+/* B */
+/* Go To the Top of Body With Animate */
+var Body = {
+	top : function() {
+		$('html, body').animate({scrollTop:0}, 'slow');		
+		
+		return true;
+	}
+};
+
+/* C */
+/* CNPJ Validate */
 var CNPJ = 
 {
-  valida : function(cnpj) {
+  validate : function(cnpj) {
 		var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
 		digitos_iguais = 1;
 		if (cnpj.length < 14 && cnpj.length < 15)
@@ -49,9 +76,10 @@ var CNPJ =
 	}
 };
 
+/* CPF Validate */
 var CPF =
 {
-	valida : function(cpf) {
+	validate : function(cpf) {
 		var numeros, digitos, soma, i, resultado, digitos_iguais;
 		digitos_iguais = 1;
 		if (cpf.length < 11)
@@ -86,6 +114,50 @@ var CPF =
 	}
 };
 
+/* D */
+/* returns only the input digits */
+var Dig =
+{
+	only : function(v) {
+		return v.replace(/\D/g, '');
+	}	
+};
+
+/* positions in specific div */
+var Div = {
+	go : function(id) {
+		$(document).scrollTop( $("#"+id).offset().top );  
+		
+		return true;
+	}
+};
+
+/* E */
+/* F */
+/* G */
+/* H */
+
+/* I */
+/* input readonly , enabledField */
+var Input = {
+	readOnly : function(id) {
+		document.getElementById( id ).readOnly = true;
+		document.getElementById( id ).style.backgroundColor = "#CCC";		
+		document.getElementById( id ).value = '';
+	},
+	enabledField : function(id) {
+		document.getElementById( id ).readOnly = false;
+		document.getElementById( id ).style.backgroundColor = "#FFF";		
+		document.getElementById( id ).value = '';
+	}
+};
+
+/* J */
+/* K */
+/* L */
+
+/* M */
+/* format a number in Brazil or US */
 var Money =
 {
 	formatBr: function(num) {
@@ -112,13 +184,7 @@ var Money =
 	}
 }
 
-var Dig =
-{
-	only : function(v) {
-		return v.replace(/\D/g, '');
-	}	
-};	
-
+/* mask for input fields */
 var Mask = 
 {
 	mascara : function(o,f) {
@@ -182,19 +248,6 @@ var Mask =
 	}	
 };
 
-var Input = {
-	readOnly : function(id) {
-		document.getElementById( id ).readOnly = true;
-		document.getElementById( id ).style.backgroundColor = "#CCC";		
-		document.getElementById( id ).value = '';
-	},
-	enabledField : function(id) {
-		document.getElementById( id ).readOnly = false;
-		document.getElementById( id ).style.backgroundColor = "#FFF";		
-		document.getElementById( id ).value = '';
-	}
-};
-
 var Zeros = {
 	left : function(str, max) {
 		str = String( str );
@@ -251,24 +304,4 @@ var Select = {
 	}
 };
 
-var Alert = {
-	show : function(id, msg) {
-		if ( $('#'+id).val() == 0 ) 
-		{
-			alert( msg );
-			$('#'+id).focus();
-			return false;
-		}	
-		
-		return true;
-	}
-};
-
-var Div = {
-	go : function(id) {
-		$(document).scrollTop( $("#"+id).offset().top );  
-		
-		return true;
-	}
-};
 
