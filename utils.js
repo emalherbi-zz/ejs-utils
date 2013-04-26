@@ -133,7 +133,18 @@ var Div = {
 };
 
 /* E */
+
 /* F */
+/* Form clear */
+var Form = 
+{
+	clear : function(idform) {
+		$('#'+idform).each(function() {
+			this.reset();
+		});	
+	}
+};
+
 /* G */
 /* H */
 
@@ -248,29 +259,38 @@ var Mask =
 	}	
 };
 
-var Zeros = {
-	left : function(str, max) {
-		str = String( str );
-	
-		return ( str.length < max ) ? Zeros.left("0" + str, max) : str;
+/* N */
+/* O */
+/* P */
+/* Q */
+/* R */
+
+/* S */
+/* return a specific attribute, remove an option from select, remove all options from select */
+var Select = {
+	option_select_attr : function(idselect, attr) {
+		return $('option:selected', $('#'+idselect)).attr( attr );
+	},
+	remove_selected_option : function(idselect) {
+		$('#' + idselect + ' option:selected').each(function() {
+			$(this).remove();
+		});
+	},
+	remove_all_option : function(idselect) {
+		$('#' + idselect + ' option').each(function() {
+			$(this).remove();
+		});
 	}
 };
 
-var Form = 
-{
-	clear : function(idform) {
-		$('#'+idform).each(function() {
-			this.reset();
-		});	
-	}
-};
-
+/* T */
+/* Table Remove, CalculateUs, CalculateBr */
 var Table = 
 {
 	remove : function(idtable) {
 		$('#'+idtable).remove();
 	},	
-	calculate : function(idtable, posfield) {
+	calculateUs : function(idtable, posfield) {
 		var vlr = 0;
 		$("#"+idtable+" tbody tr > td:nth-child("+posfield+")").each(function(i, el) {
 			vlr += Number(el.innerHTML.replace(".", "").replace(",", "."));
@@ -288,20 +308,16 @@ var Table =
 	}
 };
 
-var Select = {
-	option_select_attr : function(idselect, attr) {
-		return $('option:selected', $('#'+idselect)).attr( attr );
-	},
-	remove_selected_option : function(idselect) {
-		$('#' + idselect + ' option:selected').each(function() {
-			$(this).remove();
-		});
-	},
-	remove_all_option : function(idselect) {
-		$('#' + idselect + ' option').each(function() {
-			$(this).remove();
-		});
+/* U */
+/* V */
+/* X */
+
+/* Z */
+/* Zeros add left in input */
+var Zeros = {
+	add_left : function(str, max) {
+		str = String( str );
+	
+		return ( str.length < max ) ? Zeros.left("0" + str, max) : str;
 	}
 };
-
-
