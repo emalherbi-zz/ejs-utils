@@ -300,7 +300,8 @@ var Timeout = {
 };
 
 /* T */
-/* Table Remove, CalculateUs, CalculateBr */
+/* Table Remove, CalculateUs, CalculateBr, */
+/* Get Fields For Table and Result ArrayCollection */
 var Table = 
 {
 	remove : function(idtable) {
@@ -321,7 +322,23 @@ var Table =
 		});
 		
 		return Money.formatBr( vlr );
-	}
+	},
+	getFieldsResultArray : function(idtable) {
+		var dados = new Array();
+		
+		$('#' + idtable + ' tbody tr').each(function(i, el) {
+	    	var obj = new Array();
+		    
+		    $( $(el).children() ).each(function(ii, ell) {
+		        var val = $( $(ell).children() ).val();
+		        obj[ii] = val;
+		    }); 
+		    
+			dados[i] = obj;
+		});
+	
+		return dados;
+	}		
 };
 
 /* U */
