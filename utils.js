@@ -130,6 +130,17 @@ var Dig =
 	}	
 };
 
+/* returns Date format Br or Sql */
+var Date =
+{
+	nowBr : function() {
+		return $.datepicker.formatDate( 'dd/mm/yy', new Date() );
+	},	
+	nowSql : function() {
+		return $.datepicker.formatDate( 'yy-mm-dd', new Date() );
+	}	
+};
+
 /* positions in specific div */
 var Div = {
 	go : function(id) {
@@ -339,6 +350,13 @@ var Table =
 	
 		return dados;
 	}		
+};
+
+/* returns trim element */
+var Trim = {
+	run : function(str) {
+		str.replace(/^\s+|\s+$/g,"");
+	}
 };
 
 /* U */
