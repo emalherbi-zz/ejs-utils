@@ -283,7 +283,14 @@ var Mask =
 /* O */
 /* P */
 /* Q */
+
 /* R */
+/* return radio checked from form */
+var Radio = {
+	checked : function(field, form) {
+		return $('input[name='+field+']:checked', '#'+form).val();
+	}
+};
 
 /* S */
 /* return a specific attribute, remove an option from select, remove all options from select */
@@ -313,6 +320,7 @@ var Timeout = {
 /* T */
 /* Table Remove, CalculateUs, CalculateBr, */
 /* Get Fields For Table and Result ArrayCollection */
+/* return columns count radio checked  */
 var Table = 
 {
 	remove : function(idtable) {
@@ -349,7 +357,17 @@ var Table =
 		});
 	
 		return dados;
-	}		
+	},
+	columns_count_radio_checked : function(idtable, posfield) {
+		var count = 0;
+		$("#"+idtable+" tbody tr > td:nth-child("+posfield+") input").each(function(i, el) {
+			if ( $(el).attr('checked') == 'checked' ) {
+				count++;
+			}
+		});
+		
+		return count;
+	}	
 };
 
 /* returns trim element */
