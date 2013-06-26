@@ -6,50 +6,57 @@ Projects Utils
 Com esse plugin é possível realizar
 
 Alerta
-- Msg de Alerta com Foco no Componente
+- Msg de Alerta com Foco no Componente.
 
 Topo da Página
-- Ir ao topo da página
+- Ir ao topo da página.
 
 Checkbox
-- Selecionar o Checkbox
+- Selecionar o Checkbox.
 
 CNPJ
-- Validar CNPJ
+- Validar CNPJ.
 
 CPF
-- Validar CPF
+- Validar CPF.
 
-Digitos
-- Remover máscara (se existir) e pegar somente digitos do campo
+Dígitos
+- Remover máscara (se existir) e pegar somente dígitos do campo.
 
 Div
-- Ir a Div Especifica
+- Posicionar o Scroll em um elemento especifico do HTML.
 
 Formulário
-- Limpar todos os campos do formulário
+- Limpar os campos do formulário.
 
 Input
-- Campo somente Leitura ou Editável
+- Deixar o campo somente Leitura ou Editável.
 
 Dinheiro
-- Transformar valores em formato US ou BR
+- Formatar o valor em formato US ou BR.
 
 Máscara
-- Criar máscara para os campos de: Data, Hora, Telefone, CEP, CPF, CNPJ, Números, Valor Us, Valor Br
+- Inserir máscara para os campos de: Data, Hora, Telefone, CEP, CPF, CNPJ, Somente Números, Valor Us, Valor Br.
+
+Radio
+- Retorna o item do campo do tipo Radio checado.
 
 Select
-- Pegar o valor do Atributo do Item Selecionado
-- Remover a opção selecionada do Select
-- Remover todas opções do Select
+- Pegar o valor do atributo do item selecionado. 
+- Remover a opção selecionada do Select. 
+- Remover todas opções do Select. 
 
 Recarregar Página
-- Recarregar a Página após um período de tempo
+- Recarregar a página após um período de tempo estipulado.
 
 Tabela
-- Remover Tabela
-- Totalizar a tabela (formatos US e BR)
-- Pega os valores da tabela e retorna array
+- Remover tabela. 
+- Totalizar a tabela (formatos US e BR). 
+- Pega os valores da tabela e retorna array. 
+- Conta os itens do tipo radio de uma coluna especifica da tabela.
+
+Limpa
+- Remove espaços a esquerda e a direita de um valor.
 
 Zeros
-- Adicionar zeros a esquerda de um valor
+- Adicionar zeros a esquerda de um valor.
