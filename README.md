@@ -9,7 +9,7 @@ Alerta
 - Msg de Alerta com Foco no Componente.
 
 Topo da Página
-- Ir ao topo da página.
+- Subir ao topo da página.
 
 Checkbox
 - Selecionar o Checkbox.
