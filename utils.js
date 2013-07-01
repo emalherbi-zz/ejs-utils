@@ -131,7 +131,7 @@ var Dig =
 };
 
 /* returns Date format Br or Sql */
-var Date =
+var Data =
 {
 	nowBr : function() {
 		return $.datepicker.formatDate( 'dd/mm/yy', new Date() );
