@@ -142,6 +142,7 @@ var Date =
 };
 
 /* positions in specific div */
+/* hide all div */
 var Div = {
 	go : function(id) {
 		$('#'+id).slideToggle('slow', function() {
@@ -149,6 +150,9 @@ var Div = {
 		});		
 		
 		return true;
+	},
+	hideAll: function() {
+		$('div[id^="div-"]').hide();
 	}
 };
 
