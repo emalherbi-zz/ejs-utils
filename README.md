@@ -55,6 +55,10 @@ Tabela
 - Pega os valores da tabela e retorna array. 
 - Conta os itens do tipo radio de uma coluna especifica da tabela.
 
+Tabela Google
+- Insere botão Edit na tabela Google usando bootstrap
+- Insere botão Delete na tabela Google usando bootstrap
+
 Limpa
 - Remove espaços a esquerda e a direita de um valor.
 
