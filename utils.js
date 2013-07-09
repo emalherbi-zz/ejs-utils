@@ -392,6 +392,22 @@ var Table =
 	}	
 };
 
+/* insert btn edit and delete in table google with bootstrap */
+var TableGoogle = {	
+	btn_edit_str : function (func) {
+	    var btn_edit = '<button type="button" class="btn btn-small btn-warning" onclick="'+func+'" >';
+		btn_edit += '<i class="icon-pencil icon-white"></i>Editar';
+		btn_edit += '</button>'; 	  
+		return btn_edit; 
+	}, 
+	btn_delete_str : function (func) {
+		var btn_del = '<button type="button" class="btn btn-small btn-danger" onclick="'+func+'" >';
+		btn_del += '<i class="icon-remove icon-white"></i>Deletar';
+		btn_del += '</button>';   
+		return btn_del; 
+	}
+};
+
 /* returns trim element */
 var Trim = {
 	run : function(str) {
