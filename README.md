@@ -2,7 +2,7 @@ utils
 =====
 
 * Necessário a utilização do Jquery e JqueryUi.
-===============================================
+
 
 Projects Utils
 ==============
