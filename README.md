@@ -1,7 +1,11 @@
 utils
 =====
 
+* Necessário a utilização do Jquery e JqueryUi.
+===============================================
+
 Projects Utils
+==============
 
 Com esse plugin é possível realizar
 
