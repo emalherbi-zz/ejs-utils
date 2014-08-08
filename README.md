@@ -28,7 +28,7 @@ Dígitos
 - Remover máscara (se existir) e pegar somente dígitos do campo.
 
 Div
-- Posicionar o Scroll em um elemento especifico do HTML.
+- Posiciona o Scroll em um elemento especifico do HTML.
 
 Formulário
 - Limpar os campos do formulário.
@@ -44,6 +44,9 @@ Máscara
 
 Radio
 - Retorna o item do campo do tipo Radio checado.
+
+Scroll
+- Possiciona o Scroll no elemento especificado do HTML.
 
 Select
 - Pegar o valor do atributo do item selecionado. 
