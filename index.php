@@ -96,7 +96,7 @@
 			</div>
 			<div id="heading">
 				<div id="logo">
-					Utls Js
+					Utils Js
 				</div>
 				<div id="tagline">
 					@emalherbi  -  @ihoinacki
