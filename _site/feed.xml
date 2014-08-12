@@ -3,8 +3,8 @@
 	<channel>
 		<title></title>
 		<description></description>
-		<link>/</link>
-		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		<link>http://localhost/www/github/ejs-utils/_site/</link>
+		<atom:link href="http://localhost/www/github/ejs-utils/_site/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Table Calculate Us/Br</title>
@@ -48,8 +48,8 @@
 
 </description>
 				<pubDate>Fri, 04 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/t/2013/01/04/table-calculate.html</link>
-				<guid isPermaLink="true">/t/2013/01/04/table-calculate.html</guid>
+				<link>http://localhost/www/github/ejs-utils/_site/t/2013/01/04/table-calculate.html</link>
+				<guid isPermaLink="true">http://localhost/www/github/ejs-utils/_site/t/2013/01/04/table-calculate.html</guid>
 			</item>
 		
 			<item>
@@ -94,8 +94,8 @@
 
 </description>
 				<pubDate>Thu, 03 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/t/2013/01/03/trim.html</link>
-				<guid isPermaLink="true">/t/2013/01/03/trim.html</guid>
+				<link>http://localhost/www/github/ejs-utils/_site/t/2013/01/03/trim.html</link>
+				<guid isPermaLink="true">http://localhost/www/github/ejs-utils/_site/t/2013/01/03/trim.html</guid>
 			</item>
 		
 			<item>
@@ -162,8 +162,8 @@
 
 </description>
 				<pubDate>Wed, 02 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/v/2013/01/02/validate-field.html</link>
-				<guid isPermaLink="true">/v/2013/01/02/validate-field.html</guid>
+				<link>http://localhost/www/github/ejs-utils/_site/v/2013/01/02/validate-field.html</link>
+				<guid isPermaLink="true">http://localhost/www/github/ejs-utils/_site/v/2013/01/02/validate-field.html</guid>
 			</item>
 		
 			<item>
@@ -208,8 +208,8 @@
 
 </description>
 				<pubDate>Tue, 01 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/z/2013/01/01/zeros-left-add.html</link>
-				<guid isPermaLink="true">/z/2013/01/01/zeros-left-add.html</guid>
+				<link>http://localhost/www/github/ejs-utils/_site/z/2013/01/01/zeros-left-add.html</link>
+				<guid isPermaLink="true">http://localhost/www/github/ejs-utils/_site/z/2013/01/01/zeros-left-add.html</guid>
 			</item>
 		
 	</channel>

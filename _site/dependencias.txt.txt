@@ -1,0 +1,27 @@
+-- installers
+- jekyll
+- npm
+- bower
+- bower-installer (npm)
+- grunt
+
+default folder : 
+
+-- build jekyll
+- jekyll build
+
+dist : 
+
+-- BOWER
+
+-- install bower de _dependencies and bower components
+- bower-installer
+
+-- GRUNT
+
+-- install node modules
+- npm install
+
+-- minification js on _dist folder
+- grunt build
+
