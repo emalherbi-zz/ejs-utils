@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+{% if page.title == 'ejs-utils' %}
+  <article class="home">
+    <span class="post-date">The Project</span>
+    <h2>The Javascript Utils!</h2>
+    <div>
+      <p>With this <strong>plugin</strong> is possible to do:</p>
+      <ul>
+      {% for model in site.utils %}
+        <li><strong>{{ model.name }}</strong> - {{ model.desc }}</li>
+      {% endfor %}
+      </ul>
+      <h3>Usage</h3>
+{% highlight javascript %}
+<!-- Latest compiled and minified JavaScript -->
+<script src="{{ site.BASE_PATH }}/dist/ejs-utils.js"></script>
+{% endhighlight %}
+      <h3 id="ejs-util-is-on-github">See on GitHub</h3>
+      <p><a class="btn btn-default" target="_blank" href="https://github.com/emalherbi/ejs-utils">GitHub!</a></p>
+      <p>Open sourced under <a target="_blank" href="http://opensource.org/licenses/MIT">MIT</a> license.</p>
+    </div>
+  </article>
+  <article>
+    <hr />
+  </article>
+  <article class="home" >
+    <h2>Documentation</h2>
+  </article>
+{% endif %}
+
+{{ content }}

@@ -1,0 +1,44 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+#pygments: true
+markdown: kramdown
+
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: ejs-utils
+
+description:
+author:
+  name: emalherbi and ivanhoinacki.
+  email:
+  github: emalherbi
+  github2: ivanhoinacki
+  twitter:
+  pinterest:
+  linkedin:
+  bio: The Javascript Utils!
+  email_md5:
+
+utils:
+-   name: Table Calculate Us/Br
+    desc: Calculate Us/Br values from table.
+-   name: Trim
+    desc: Strip whitespace from the beginning and end of a string.
+-   name: Zeros
+    desc: Add zeros to the left of a string number.
+-   name: Validate Field
+    desc: Validate the field and displays a warning message if empty.
+
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH: 
