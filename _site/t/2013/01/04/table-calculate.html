@@ -6,7 +6,7 @@
 	
 	<meta name="description" content="Calculate Us/Br values from table">
 	
-	<meta name="author" content="emalherbi and ivanhoinacki.">
+	<meta name="author" content="emalherbi and ivanhoinacki">
 
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -189,7 +189,7 @@ function calculate() {
 
 <h4 id="html">html</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;table-calculate&quot;</span> <span class="na">class=</span><span class="s">&quot;table&quot;</span> <span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table-calculate"</span> <span class="na">class=</span><span class="s">"table"</span> <span class="nt">&gt;</span>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
       <span class="nt">&lt;th&gt;</span>Calculate (Input)<span class="nt">&lt;/th&gt;</span>
@@ -198,30 +198,30 @@ function calculate() {
   <span class="nt">&lt;/thead&gt;</span>
   <span class="nt">&lt;tbody&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;75&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"75"</span><span class="nt">&gt;&lt;/td&gt;</span>
       <span class="nt">&lt;td&gt;</span>15<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"100"</span><span class="nt">&gt;&lt;/td&gt;</span>
       <span class="nt">&lt;td&gt;</span>132<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 
-<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:calculate()&quot;</span> <span class="nt">&gt;</span>Calculate<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span> <span class="na">role=</span><span class="s">"form"</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">onclick=</span><span class="s">"javascript:calculate()"</span> <span class="nt">&gt;</span>Calculate<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calculate</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
-  <span class="nx">alert</span><span class="p">(</span> <span class="s1">&#39;US: &#39;</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">&#39; BR: &#39;</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">'table-calculate'</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">'table-calculate'</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="s1">'US: '</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">' BR: '</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
 
-  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
-  <span class="nx">alert</span><span class="p">(</span> <span class="s1">&#39;US: &#39;</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">&#39; BR: &#39;</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">'table-calculate'</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">'table-calculate'</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="s1">'US: '</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">' BR: '</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 
 
@@ -250,14 +250,14 @@ function calculate() {
 			 
 				<li>
 					<a href="/tags.html#table-ref">
-					table <span>(1)</span>
+					table <span>(3)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
 					<a href="/tags.html#columns-ref">
-					columns <span>(1)</span>
+					columns <span>(3)</span>
 					,
 					</a>
 				</li>
@@ -312,7 +312,7 @@ function calculate() {
 
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
-        <h4 class="section-title author-name">emalherbi and ivanhoinacki.</h4>
+        <h4 class="section-title author-name">emalherbi and ivanhoinacki</h4>
         <p class="author-bio">The Javascript Utils!</p>
       </section>
     </div>
@@ -324,7 +324,7 @@ function calculate() {
 		  <li class="previous"><a href="/t/2013/01/03/trim.html" title="Trim">&larr; Previous</a></li>
 		  
 		  
-			<li class="next disabled"><a>Next &rarr;</a>
+		  <li class="next"><a href="/b/2013/01/05/scroll.html" title="Scroll to ID">Next &rarr;</a></li>
 		  
 		</ul>
 
@@ -342,7 +342,7 @@ function calculate() {
 		<footer>
 			<hr/>
 			<p>
-				&copy; 2014 emalherbi and ivanhoinacki. with Jekyll.
+				&copy; 2014 emalherbi and ivanhoinacki with Jekyll.
 			</p>
 		</footer>
 	</div>

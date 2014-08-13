@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Validate Field</title>
+	<title>Body Top</title>
 	
-	<meta name="description" content="validate the field and displays a warning message if empty.">
+	<meta name="description" content="Go To the Top of Body With Animate">
 	
 	<meta name="author" content="emalherbi and ivanhoinacki">
 
@@ -132,7 +132,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>Validate Field </h1>
+  <h1>Body Top </h1>
 </div>
 	
 <article>
@@ -141,46 +141,107 @@
 	 <span class="post-date">
 	   
 	   January 
-	   2nd,
-	     
+	   6th,
+	   
 	   2013
 	 </span>
 	  <div class="article_body">
-	  <p>Validate the field and displays a warning message if empty.</p>
+	  <p>Go To the Top of Body With Animate </p>
 
 <h2 id="example">Example</h2>
 
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <input type="email" class="form-control" id="txt-email" name="txt-email" placeholder="Enter email" />
-  </div>
-  <button type="button" class="btn btn-default" onclick="javascript:validate()">Validate</button>
-</form>
+<p>Top </p>
+
+<div class="modal-footer"><button onclick="javascript:setdown()" type="button" class="btn btn-primary"> Click Go Bottom </button></div>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<p>↓</p>
+
+<style type="text/css" media="screen">
+.modal-footer{
+	text-align:center;!important;
+}
+
+@media screen and (max-height: 450px), (max-height: 450px) {    
+    .modal-footer{
+		text-align:center;!important;
+	}
+}
+</style>
 
 <script>
-  function validate() {
-    Validate.field('txt-email', 'Field is required!');
-  }
+
+function setdown(){
+	var $elem = $('.col-sm-10');	
+	$('html, body').animate({scrollTop: $elem.height()}, 800);	
+}
+
+function goTop(){
+	$("#myModal").modal('hide');   
+	Body.top();	
+}
+
+var Body = {
+	top : function() {
+		$('html, body').animate({scrollTop:0}, 'slow');
+
+		return true;
+	}
+};		
+
 </script>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
 <h4 id="html">html</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span> <span class="na">role=</span><span class="s">"form"</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"txt-email"</span> <span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"txt-email"</span> <span class="na">name=</span><span class="s">"txt-email"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">onclick=</span><span class="s">"javascript:validate()"</span> <span class="nt">&gt;</span>Validate<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table"</span> <span class="na">class=</span><span class="s">"table"</span> <span class="nt">&gt;</span> 	
+ <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"btnGoTop"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="nt">&gt;</span>Click Go Top<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">validate</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">Validate</span><span class="p">.</span><span class="nx">field</span><span class="p">(</span><span class="s1">'txt-email'</span><span class="p">,</span> <span class="s1">'Field is required!'</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">"#btnGoTop"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>		
+   <span class="nx">Body</span><span class="p">.</span><span class="nx">top</span><span class="p">();</span>
+<span class="p">});</span>
 
+<span class="kd">var</span> <span class="nx">Body</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">top</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+ 	  <span class="nx">$</span><span class="p">(</span><span class="s1">'html, body'</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="na">scrollTop</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="s1">'slow'</span><span class="p">);</span>
+	  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">};</span></code></pre></div>
+
+<div class="modal-footer"><button onclick="javascript:goTop()" type="button" class="btn btn-primary"> Click Go Top </button></div>
 
 	  </div>
 
@@ -190,8 +251,8 @@
 		  
 		  
 			 
-				<li><a href="/categories.html#v-ref">
-					v <span>(1)</span>
+				<li><a href="/categories.html#b-ref">
+					b <span>(2)</span>
 					
 				</a></li>
 			
@@ -206,36 +267,22 @@
 		  
 			 
 				<li>
-					<a href="/tags.html#validate-ref">
-					validate <span>(1)</span>
+					<a href="/tags.html#table-ref">
+					table <span>(3)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#field-ref">
-					field <span>(1)</span>
+					<a href="/tags.html#columns-ref">
+					columns <span>(3)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="/tags.html#input-ref">
-					input <span>(1)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#alert-ref">
-					alert <span>(1)</span>
-					,
-					</a>
-				</li>
-			 
-				<li>
-					<a href="/tags.html#message-ref">
-					message <span>(1)</span>
+					<a href="/tags.html#div-ref">
+					div <span>(2)</span>
 					
 					</a>
 				</li>
@@ -250,7 +297,7 @@
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Validate Field"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Body Top"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
           Twitter
@@ -278,10 +325,10 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/z/2013/01/01/zeros-left-add.html" title="Zeros Add Left">&larr; Previous</a></li>
+		  <li class="previous"><a href="/b/2013/01/05/scroll.html" title="Scroll to ID">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/t/2013/01/03/trim.html" title="Trim">Next &rarr;</a></li>
+			<li class="next disabled"><a>Next &rarr;</a>
 		  
 		</ul>
 
