@@ -8,31 +8,6 @@ description: validate the field and displays a warning message if empty.
 
 Validate the field and displays a warning message if empty.
 
-<table id="table-pessoas" class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td><input type="text" value="10"></td>
-      <td><input type="text" value="13"></td>
-      <td><input type="text" value="15"></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td><input type="text" value="100"></td>
-      <td><input type="text" value="132"></td>
-      <td><input type="text" value="151"></td>
-    </tr>
-  </tbody>
-</table>
-
 ## Example
 
 <form class="form-inline" role="form" >

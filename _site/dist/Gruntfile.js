@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean',
         'copy',
-        'uglify'
+        'uglify',
     ]);    
 
     grunt.registerTask('deploy', [

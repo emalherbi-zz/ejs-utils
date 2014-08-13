@@ -17,10 +17,10 @@
 	<![endif]-->
 
 	<!-- Le styles -->
-	<link href="http://localhost/www/github/ejs-utils/_site/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="http://localhost/www/github/ejs-utils/_site/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="http://localhost/www/github/ejs-utils/_site/assets/resources/syntax/syntax.css" rel="stylesheet">
-	<link href="http://localhost/www/github/ejs-utils/_site/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 
 	<!-- Le fav and touch icons -->
 	<!-- Update these with your own images
@@ -30,7 +30,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 	-->
 
-	<link rel="alternate" type="application/rss+xml" title="" href="http://localhost/www/github/ejs-utils/_site/feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 			
 			
 			
-			<a class="navbar-brand" href="http://localhost/www/github/ejs-utils/_site/">
+			<a class="navbar-brand" href="/">
 				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
 				
 			</a>
@@ -59,9 +59,9 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="http://localhost/www/github/ejs-utils/_site/">Home</a></li>
-				<li><a href="http://localhost/www/github/ejs-utils/_site/categories.html">Categories</a></li>
-				<li><a href="http://localhost/www/github/ejs-utils/_site/tags.html">Tags</a></li>
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
@@ -72,9 +72,9 @@
 			<i class="fa fa-bars"></i>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="http://localhost/www/github/ejs-utils/_site/"><i class="fa fa-home"></i>Home</a></li>
-			<li><a href="http://localhost/www/github/ejs-utils/_site/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
-			<li><a href="http://localhost/www/github/ejs-utils/_site/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
 			<li class="divider"></li>
 			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
 		</ul>
@@ -83,11 +83,11 @@
 	<div class="col-sm-3 sidebar hidden-xs">
 		<! -- sidebar.html -->
 <header class="sidebar-header" role="banner">
-	<a href="http://localhost/www/github/ejs-utils/_site/">
-		<img src="http://localhost/www/github/ejs-utils/_site/assets/img/js-logo.png" class="img-circle" />
+	<a href="/">
+		<img src="/assets/img/js-logo.png" class="img-circle" />
 	</a>
 	<h3 class="title">
-        <a href="http://localhost/www/github/ejs-utils/_site/"></a>
+        <a href="/"></a>
     </h3>
 </header>
 
@@ -120,7 +120,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="http://localhost/www/github/ejs-utils/_site/feed.xml">
+			<a class="btn btn-default btn-sm" href="/feed.xml">
 				<i class="fa fa-rss fa-lg"></i>
 			</a>
 		</li>
@@ -150,38 +150,78 @@
 
 <h2 id="example">Example</h2>
 
+<table id="table-calculate" class="table">
+  <thead>
+    <tr>
+      <th>Calculate (Input)</th>
+      <th>Calculate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input class="form-control" type="text" value="75" /></td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td><input class="form-control" type="text" value="100" /></td>
+      <td>132</td>
+    </tr>
+  </tbody>
+</table>
+
 <form class="form-inline" role="form">
-  <div class="form-group">
-    <input type="text" class="form-control" id="txt-zeros" name="txt-zeros" placeholder="type a number" />
-  </div>
-  <button type="button" class="btn btn-default" onclick="javascript:addZeros()">Add Zeros</button>
+  <button type="button" class="btn btn-default" onclick="javascript:calculate()">Calculate</button>
 </form>
 
 <script>
-  function addZeros() {
-    $('#txt-zeros').val(
-      Zeros.add_left( $('#txt-zeros').val(), '5' )
-    );
-  }
+function calculate() {
+  var vlrUs = Table.calculateUs( 'table-calculate', 1 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 1 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
+
+  var vlrUs = Table.calculateUs( 'table-calculate', 2 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 2 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
+}
 </script>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
 <h4 id="html">html</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span> <span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;txt-zeros&quot;</span> <span class="na">name=</span><span class="s">&quot;txt-zeros&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;type a number&quot;</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:addZeros()&quot;</span> <span class="nt">&gt;</span>Add Zeros<span class="nt">&lt;/button&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;table-calculate&quot;</span> <span class="na">class=</span><span class="s">&quot;table&quot;</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Calculate (Input)<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Calculate<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;75&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>15<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>132<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:calculate()&quot;</span> <span class="nt">&gt;</span>Calculate<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">addZeros</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-zeros&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
-    <span class="nx">Zeros</span><span class="p">.</span><span class="nx">add_left</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-zeros&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="s1">&#39;5&#39;</span> <span class="p">)</span>
-  <span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calculate</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="s1">&#39;US: &#39;</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">&#39; BR: &#39;</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">vlrUs</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateUs</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">vlrBr</span> <span class="o">=</span> <span class="nx">Table</span><span class="p">.</span><span class="nx">calculateBr</span><span class="p">(</span> <span class="s1">&#39;table-calculate&#39;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span> <span class="s1">&#39;US: &#39;</span> <span class="o">+</span> <span class="nx">vlrUs</span> <span class="o">+</span> <span class="s1">&#39; BR: &#39;</span> <span class="o">+</span> <span class="nx">vlrBr</span> <span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 
 
@@ -193,7 +233,7 @@
 		  
 		  
 			 
-				<li><a href="http://localhost/www/github/ejs-utils/_site/categories.html#t-ref">
+				<li><a href="/categories.html#t-ref">
 					t <span>(2)</span>
 					
 				</a></li>
@@ -209,35 +249,35 @@
 		  
 			 
 				<li>
-					<a href="http://localhost/www/github/ejs-utils/_site/tags.html#table-ref">
+					<a href="/tags.html#table-ref">
 					table <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="http://localhost/www/github/ejs-utils/_site/tags.html#columns-ref">
+					<a href="/tags.html#columns-ref">
 					columns <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="http://localhost/www/github/ejs-utils/_site/tags.html#calculate-ref">
+					<a href="/tags.html#calculate-ref">
 					calculate <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="http://localhost/www/github/ejs-utils/_site/tags.html#us-ref">
+					<a href="/tags.html#us-ref">
 					us <span>(1)</span>
 					,
 					</a>
 				</li>
 			 
 				<li>
-					<a href="http://localhost/www/github/ejs-utils/_site/tags.html#br-ref">
+					<a href="/tags.html#br-ref">
 					br <span>(1)</span>
 					
 					</a>
@@ -281,7 +321,7 @@
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="http://localhost/www/github/ejs-utils/_site/t/2013/01/03/trim.html" title="Trim">&larr; Previous</a></li>
+		  <li class="previous"><a href="/t/2013/01/03/trim.html" title="Trim">&larr; Previous</a></li>
 		  
 		  
 			<li class="next disabled"><a>Next &rarr;</a>
@@ -307,10 +347,10 @@
 		</footer>
 	</div>
 
-	<script type="text/javascript" src="http://localhost/www/github/ejs-utils/_site/assets/resources/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="http://localhost/www/github/ejs-utils/_site/assets/resources/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="http://localhost/www/github/ejs-utils/_site/dist/ejs-utils.js"></script>
-	<script type="text/javascript" src="http://localhost/www/github/ejs-utils/_site/assets/js/app.js"></script>
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/dist/ejs-utils.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
 </body>
 </html>
 

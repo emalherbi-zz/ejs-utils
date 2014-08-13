@@ -10,19 +10,39 @@ Calculate Us/Br values from table
 
 ## Example
 
+<table id="table-calculate" class="table" >
+  <thead>
+    <tr>
+      <th>Calculate (Input)</th>
+      <th>Calculate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input class="form-control" type="text" value="75"></td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td><input class="form-control" type="text" value="100"></td>
+      <td>132</td>
+    </tr>
+  </tbody>
+</table>
+
 <form class="form-inline" role="form" >
-  <div class="form-group" >
-    <input type="text" class="form-control" id="txt-zeros" name="txt-zeros" placeholder="type a number" >
-  </div>
-  <button type="button" class="btn btn-default" onclick="javascript:addZeros()" >Add Zeros</button>
+  <button type="button" class="btn btn-default" onclick="javascript:calculate()" >Calculate</button>
 </form>
 
 <script>
-  function addZeros() {
-    $('#txt-zeros').val(
-      Zeros.add_left( $('#txt-zeros').val(), '5' )
-    );
-  }
+function calculate() {
+  var vlrUs = Table.calculateUs( 'table-calculate', 1 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 1 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
+
+  var vlrUs = Table.calculateUs( 'table-calculate', 2 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 2 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
+}
 </script>
 
 ## Example <i>(code </>)</i>
@@ -30,20 +50,40 @@ Calculate Us/Br values from table
 #### html
 
 {% highlight html %}
+<table id="table-calculate" class="table" >
+  <thead>
+    <tr>
+      <th>Calculate (Input)</th>
+      <th>Calculate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input class="form-control" type="text" value="75"></td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td><input class="form-control" type="text" value="100"></td>
+      <td>132</td>
+    </tr>
+  </tbody>
+</table>
+
 <form class="form-inline" role="form" >
-  <div class="form-group" >
-    <input type="text" class="form-control" id="txt-zeros" name="txt-zeros" placeholder="type a number" >
-  </div>
-  <button type="button" class="btn btn-default" onclick="javascript:addZeros()" >Add Zeros</button>
+  <button type="button" class="btn btn-default" onclick="javascript:calculate()" >Calculate</button>
 </form>
 {% endhighlight %}
 
 #### js
 
 {% highlight javascript %}
-function addZeros() {
-  $('#txt-zeros').val(
-    Zeros.add_left( $('#txt-zeros').val(), '5' )
-  );
+function calculate() {
+  var vlrUs = Table.calculateUs( 'table-calculate', 1 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 1 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
+
+  var vlrUs = Table.calculateUs( 'table-calculate', 2 );
+  var vlrBr = Table.calculateBr( 'table-calculate', 2 );
+  alert( 'US: ' + vlrUs + ' BR: ' + vlrBr );
 }
 {% endhighlight %}
