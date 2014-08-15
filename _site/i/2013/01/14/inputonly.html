@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Scroll to ID</title>
+	<title>Input</title>
 	
-	<meta name="description" content="Go To ID of Body With Animate">
+	<meta name="description" content="input readonly , enabledField">
 	
 	<meta name="author" content="emalherbi and ivanhoinacki">
 
@@ -132,7 +132,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>Scroll to ID </h1>
+  <h1>Input </h1>
 </div>
 	
 <article>
@@ -141,60 +141,20 @@
 	 <span class="post-date">
 	   
 	   January 
-	   5th,
+	   14th,
 	   
 	   2013
 	 </span>
 	  <div class="article_body">
-	  <p>Go To ID of Body With Animate </p>
+	  <p>Input</p>
 
 <h2 id="example">Example</h2>
-<style type="text/css" media="screen">
-#top, #bottom {
-  background: #ddd;
-  color: #444;
-  font-family: sans-serif;
-  text-align: center;
-  text-decoration: none;
-  padding: 20px;
-  display: block;
-}
-
-#star {
-  text-align: center;
-  font-size: 50px;
-  line-height: 250px;
-  color: #ddd;
-}	
-</style>
 
 <table id="table" class="table">
-
- 	<a href="#" id="top" onclick="javascript:goBottom();">Click to scroll bottom </a>
-
-	<div id="star">&star;</div>
-
-	<a href="#" id="bottom" onclick="javascript:goTop();">Click to scroll top </a>
-	
+  
 </table>
+
 <script>
-
-function goTop(){
-  Scroll.go('top');
-}
-
-function goBottom(){
-  Scroll.go('bottom');
-}
-
-var Scroll = {
-	go : function(id) {
-		$('html, body').animate({
-			scrollTop : $("#" + id).offset().top
-		}, 'slow');
-		return true;
-	}
-};
 
 </script>
 
@@ -203,32 +163,21 @@ var Scroll = {
 <h4 id="html">html</h4>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table"</span> <span class="na">class=</span><span class="s">"table"</span> <span class="nt">&gt;</span>
- 	
- 	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"top"</span><span class="nt">&gt;</span>Click to scroll bottom <span class="nt">&lt;/a&gt;</span>
 
-	<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"star"</span><span class="nt">&gt;</span><span class="ni">&amp;star;</span><span class="nt">&lt;/div&gt;</span>
-
-	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">id=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>Click to scroll top <span class="nt">&lt;/a&gt;</span>
-	
 <span class="nt">&lt;/table&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">"#bottom"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>		
-	<span class="nx">Scroll</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="s1">'top'</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s2">"#top"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>		
-	<span class="nx">Scroll</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="s1">'bottom'</span><span class="p">);</span>
-<span class="p">});</span>
-
-
-<span class="kd">var</span> <span class="nx">Scroll</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="na">go</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">$</span><span class="p">(</span><span class="s1">'html, body'</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
-			<span class="na">scrollTop</span> <span class="p">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#"</span> <span class="o">+</span> <span class="nx">id</span><span class="p">).</span><span class="nx">offset</span><span class="p">().</span><span class="nx">top</span>
-		<span class="p">},</span> <span class="s1">'slow'</span><span class="p">);</span>
-		<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Input</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">readOnly</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"#CCC"</span><span class="p">;</span>		
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+	<span class="p">},</span>
+	<span class="nx">enabledField</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">readOnly</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"#FFF"</span><span class="p">;</span>		
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="nx">id</span> <span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
 	<span class="p">}</span>
 <span class="p">};</span></code></pre></div>
 
@@ -241,8 +190,8 @@ var Scroll = {
 		  
 		  
 			 
-				<li><a href="/categories.html#b-ref">
-					b <span>(2)</span>
+				<li><a href="/categories.html#i-ref">
+					i <span>(1)</span>
 					
 				</a></li>
 			
@@ -271,8 +220,22 @@ var Scroll = {
 				</li>
 			 
 				<li>
-					<a href="/tags.html#div-ref">
-					div <span>(3)</span>
+					<a href="/tags.html#input-ref">
+					input <span>(3)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#readonly-ref">
+					readonly <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#field-ref">
+					field <span>(2)</span>
 					
 					</a>
 				</li>
@@ -287,7 +250,7 @@ var Scroll = {
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Scroll to ID"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Input"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
           Twitter
@@ -315,10 +278,10 @@ var Scroll = {
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/t/2013/01/04/table-calculate.html" title="Table Calculate Us/Br">&larr; Previous</a></li>
+		  <li class="previous"><a href="/f/2013/01/13/formClear.html" title="Form Clear">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/b/2013/01/06/goTop.html" title="Body Top">Next &rarr;</a></li>
+		  <li class="next"><a href="/m/2013/01/15/mask.html" title="Mask">Next &rarr;</a></li>
 		  
 		</ul>
 
