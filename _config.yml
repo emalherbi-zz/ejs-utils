@@ -12,7 +12,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: ejs-utils
+      title: Web ejs utils
 
 description:
 author:
@@ -21,8 +21,8 @@ author:
   github: emalherbi
   github2: ivanhoinacki
   twitter:
-  pinterest:
-  linkedin:
+  siteAuthor1: emalherbi.com
+  siteAuthor2:  ivanhoinacki.com
   bio: The Javascript Utils!
   email_md5:
 
@@ -35,12 +35,12 @@ utils:
     desc: Add zeros to the left of a string number.
 -   name: Validate Field
     desc: Validate the field and displays a warning message if empty.
--   name: Scroll to ID 
+-   name: Scroll to ID
     desc: Go To ID of Body With Animate.
 -   name: Body
     desc: Go To the Top of Body With Animate.
 
-rss_path: feed.xml
+rss_path:
 categories_path: categories.html
 tags_path: tags.html
 #encoding: utf-8
@@ -48,4 +48,4 @@ highlighter: rouge
 #highlighter: pygments
 
 
-BASE_PATH: 
+BASE_PATH:

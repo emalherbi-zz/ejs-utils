@@ -12,7 +12,8 @@ body{
 	position: fixed;
 	top: 0px;
 	padding-top: 10%;
-	background-color: #5b0e6d;
+	z-index: 1000;
+	background: url(../img/texture.jpg) fixed;
 	color: #fff;
 }
 
@@ -87,7 +88,7 @@ article .share .gplus:hover {
 }
 
 .page-header {
-	color: #5b0e6d;
+	color: #2c3e50;
 	/*text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);*/
 }
 
@@ -122,14 +123,14 @@ article.home h4,
 article.home h5,
 article.home h6 {
 	font-family: 'Ubuntu', sans-serif;
-	color: #5b0e6d;
+	color: #2c3e50;
 }
 
 article.home h1 a,
 article.home h2 a,
 article.home h3 a,
 article.home h4 a {
-	color: #5b0e6d;
+	color: #03b4d1;
 }
 article.home h1 a:hover,
 article.home h2 a:hover,
@@ -140,6 +141,7 @@ article.home h4 a:hover {
 
 .author .author-image {
   float: left;
+	height: 50px;
   margin-right: 20px;
 }
 
