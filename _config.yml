@@ -74,4 +74,4 @@ highlighter: rouge
 #highlighter: pygments
 
 
-BASE_PATH: 
+BASE_PATH: http://emalherbi.github.io/ejs-utils
