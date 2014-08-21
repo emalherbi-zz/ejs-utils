@@ -146,13 +146,13 @@
 		<div class="page-header">
   <h1>Body Top </h1>
 </div>
-	
+
 <article>
 
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   January 
+	   January
 	   6th,
 	   
 	   2013
@@ -262,7 +262,7 @@ var Body = {
 		  <li><i class="fa fa-folder-open"></i></li>
 		  
 		  
-			 
+			
 				<li><a href="/categories.html#b-ref">
 					b <span>(2)</span>
 					
@@ -270,28 +270,28 @@ var Body = {
 			
 		  
 		</ul>
-		  
+		
 
 		
 		<ul class="list-inline">
 		  <li><i class="fa fa-tags"></i></li>
 		  
 		  
-			 
+			
 				<li>
 					<a href="/tags.html#table-ref">
 					table <span>(18)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#columns-ref">
 					columns <span>(17)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#div-ref">
 					div <span>(3)</span>
@@ -302,7 +302,7 @@ var Body = {
 		  
 		  
 		</ul>
-		  
+		
 
 		<hr>
 
@@ -335,20 +335,20 @@ var Body = {
 
     <div class="clearfix"></div>
 
-		<ul class="pager">
+		<ul class="pager" id="next" >
 		  
-		  <li class="previous"><a href="/b/2013/01/05/scroll.html" title="Scroll to ID">&larr; Previous</a></li>
+		  <li class="previous"><a href="/b/2013/01/05/scroll.html" id="btnPrevious" title="Scroll to ID">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/c/2013/01/07/cnpj-validate.html" title="CNPJ Validate">Next &rarr;</a></li>
+		  <li class="next"><a href="/c/2013/01/07/cnpj-validate.html" id="btnNext" title="CNPJ Validate">Next &rarr;</a></li>
 		  
 		</ul>
 
 		<hr>
 	</div>
-	
+
 	<div class="col-sm-2 sidebar-2">
-	
+
 	</div>
 </article>
 <div class="clearfix"></div>
@@ -362,6 +362,13 @@ var Body = {
 			</p>
 		</footer>
 	</div>
+
+	<!--script type="text/javascript">
+		window.onload = function(){
+			var $elem = $('.col-sm-10');
+				$('html, body').animate({scrollTop: $elem.height()}, 1000);
+		}
+	</script-->
 
 	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>

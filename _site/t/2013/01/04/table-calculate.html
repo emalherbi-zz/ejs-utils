@@ -146,13 +146,13 @@
 		<div class="page-header">
   <h1>Table Calculate Us/Br </h1>
 </div>
-	
+
 <article>
 
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   January 
+	   January
 	   4th,
 	   
 	   2013
@@ -244,7 +244,7 @@ function calculate() {
 		  <li><i class="fa fa-folder-open"></i></li>
 		  
 		  
-			 
+			
 				<li><a href="/categories.html#t-ref">
 					t <span>(4)</span>
 					
@@ -252,42 +252,42 @@ function calculate() {
 			
 		  
 		</ul>
-		  
+		
 
 		
 		<ul class="list-inline">
 		  <li><i class="fa fa-tags"></i></li>
 		  
 		  
-			 
+			
 				<li>
 					<a href="/tags.html#table-ref">
 					table <span>(18)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#columns-ref">
 					columns <span>(17)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#calculate-ref">
 					calculate <span>(1)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#us-ref">
 					us <span>(2)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
 					<a href="/tags.html#br-ref">
 					br <span>(2)</span>
@@ -298,7 +298,7 @@ function calculate() {
 		  
 		  
 		</ul>
-		  
+		
 
 		<hr>
 
@@ -331,20 +331,20 @@ function calculate() {
 
     <div class="clearfix"></div>
 
-		<ul class="pager">
+		<ul class="pager" id="next" >
 		  
-		  <li class="previous"><a href="/t/2013/01/03/trim.html" title="Trim">&larr; Previous</a></li>
+		  <li class="previous"><a href="/t/2013/01/03/trim.html" id="btnPrevious" title="Trim">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/b/2013/01/05/scroll.html" title="Scroll to ID">Next &rarr;</a></li>
+		  <li class="next"><a href="/b/2013/01/05/scroll.html" id="btnNext" title="Scroll to ID">Next &rarr;</a></li>
 		  
 		</ul>
 
 		<hr>
 	</div>
-	
+
 	<div class="col-sm-2 sidebar-2">
-	
+
 	</div>
 </article>
 <div class="clearfix"></div>
@@ -358,6 +358,13 @@ function calculate() {
 			</p>
 		</footer>
 	</div>
+
+	<!--script type="text/javascript">
+		window.onload = function(){
+			var $elem = $('.col-sm-10');
+				$('html, body').animate({scrollTop: $elem.height()}, 1000);
+		}
+	</script-->
 
 	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
