@@ -5,7 +5,7 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 #pygments: false
 markdown: kramdown
-
+google-analytics-tracking-id: UA-52901652-2
 
 defaults:
   -
@@ -70,8 +70,8 @@ rss_path:
 categories_path: categories.html
 tags_path: tags.html
 #encoding: utf-8
-highlighter: rouge
+#highlighter: rouge
 #highlighter: pygments
 
 
-BASE_PATH: http://emalherbi.github.io/ejs-utils
+BASE_PATH: #http://ivanhoinacki.github.io/ejs-utils

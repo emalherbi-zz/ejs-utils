@@ -1,35 +1,14 @@
 ---
 layout: post
-title: CPF Validate 
+title: CPF Validate
 categories: [C]
 tags: [table, columns, cpf, validate ]
-description: CPF Validate 
+description: CPF Validate
 ---
 
-CPF Validate 
-
-## Example
-
-<table id="table" class="table" >
-  
-</table>
-
-
-
-<script>
-
-</script>
+CPF Validate
 
 ## Example <i>(code </>)</i>
-
-#### html
-
-{% highlight html %}
-<table id="table" class="table" >
-
-</table>
-
-{% endhighlight %}
 
 #### js
 
@@ -70,5 +49,5 @@ var CPF =
 			return false;
 	}
 };
-			
+
 {% endhighlight %}

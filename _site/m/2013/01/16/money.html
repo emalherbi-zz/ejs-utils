@@ -51,7 +51,7 @@
 			
 			
 			<a class="navbar-brand" href="/">
-				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+				<img style="height:auto!important;" src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
 				
 			</a>
 		</div>
@@ -160,33 +160,17 @@
 	  <div class="article_body">
 	  <p>Money Format</p>
 
-<h2 id="example">Example</h2>
-
-<table id="table" class="table">
-  
-</table>
-
-<script>
-
-</script>
-
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
-
-<h4 id="html">html</h4>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table"</span> <span class="na">class=</span><span class="s">"table"</span> <span class="nt">&gt;</span>
-
-<span class="nt">&lt;/table&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Money</span> <span class="o">=</span>
 <span class="p">{</span>
-	<span class="na">formatBr</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-	    <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\$</span><span class="sr">|</span><span class="se">\,</span><span class="sr">/g</span><span class="p">,</span><span class="s1">''</span><span class="p">);</span>
+	<span class="nx">formatBr</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+	    <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\$|\,/g</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 
 	    <span class="k">if</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">num</span><span class="p">))</span>
-	        <span class="nx">num</span> <span class="o">=</span> <span class="s2">"0"</span><span class="p">;</span>
+	        <span class="nx">num</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span><span class="p">;</span>
 
 	    <span class="nx">sign</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span> <span class="o">==</span> <span class="p">(</span><span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">num</span><span class="p">)));</span>
 	    <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">num</span><span class="o">*</span><span class="mi">100</span><span class="o">+</span><span class="mf">0.50000000001</span><span class="p">);</span>
@@ -194,15 +178,15 @@
 	    <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">num</span><span class="o">/</span><span class="mi">100</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
 
 	    <span class="k">if</span><span class="p">(</span><span class="nx">cents</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span>
-	        <span class="nx">cents</span> <span class="o">=</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">cents</span><span class="p">;</span>
+	        <span class="nx">cents</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="nx">cents</span><span class="p">;</span>
 
 	    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">num</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nx">i</span><span class="p">))</span><span class="o">/</span><span class="mi">3</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
-	        <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">num</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nx">i</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s1">'.'</span><span class="o">+</span> <span class="nx">num</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nx">i</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span>
+	        <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nx">num</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nx">i</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="o">+</span> <span class="nx">num</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">num</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nx">i</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span>
 
-	    <span class="k">return</span> <span class="p">(((</span><span class="nx">sign</span><span class="p">)?</span><span class="s1">''</span><span class="p">:</span><span class="s1">'-'</span><span class="p">)</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="nx">cents</span><span class="p">);</span>
+	    <span class="k">return</span> <span class="p">(((</span><span class="nx">sign</span><span class="p">)</span><span class="o">?</span><span class="s1">&#39;&#39;</span><span class="o">:</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">num</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nx">cents</span><span class="p">);</span>
 	<span class="p">},</span>
-	<span class="nx">formatUs</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/,/</span><span class="p">,</span> <span class="s2">"."</span><span class="p">);</span>
+	<span class="nx">formatUs</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">num</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\./g</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/,/</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -216,7 +200,7 @@
 		  
 			
 				<li><a href="/categories.html#m-ref">
-					m <span>(2)</span>
+					m <span>(3)</span>
 					
 				</a></li>
 			
@@ -232,14 +216,14 @@
 			
 				<li>
 					<a href="/tags.html#table-ref">
-					table <span>(18)</span>
+					table <span>(19)</span>
 					,
 					</a>
 				</li>
 			
 				<li>
 					<a href="/tags.html#columns-ref">
-					columns <span>(17)</span>
+					columns <span>(18)</span>
 					,
 					</a>
 				</li>
@@ -300,7 +284,7 @@
       </section>
 
       <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <img style="height:auto!important;" src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
         <h4 class="section-title author-name">emalherbi and ivanhoinacki</h4>
         <p class="author-bio">The Javascript Utils!</p>
       </section>
@@ -310,7 +294,7 @@
 
 		<ul class="pager" id="next" >
 		  
-		  <li class="previous"><a href="/m/2013/01/15/mask.html" id="btnPrevious" title="Mask">&larr; Previous</a></li>
+		  <li class="previous"><a href="/m/2013/01/16/menucontrol.html" id="btnPrevious" title="Menu">&larr; Previous</a></li>
 		  
 		  
 		  <li class="next"><a href="/r/2013/01/17/radio.html" id="btnNext" title="Radio">Next &rarr;</a></li>
@@ -336,12 +320,17 @@
 		</footer>
 	</div>
 
-	<!--script type="text/javascript">
-		window.onload = function(){
-			var $elem = $('.col-sm-10');
-				$('html, body').animate({scrollTop: $elem.height()}, 1000);
-		}
-	</script-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-52901652-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 
 	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>

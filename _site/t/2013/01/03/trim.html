@@ -51,7 +51,7 @@
 			
 			
 			<a class="navbar-brand" href="/">
-				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+				<img style="height:auto!important;" src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
 				
 			</a>
 		</div>
@@ -181,18 +181,18 @@
 
 <h4 id="html">html</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span> <span class="na">role=</span><span class="s">"form"</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span> <span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"txt-trim"</span> <span class="na">name=</span><span class="s">"txt-trim"</span> <span class="na">value=</span><span class="s">"  Trim  "</span> <span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;txt-trim&quot;</span> <span class="na">name=</span><span class="s">&quot;txt-trim&quot;</span> <span class="na">value=</span><span class="s">&quot;  Trim  &quot;</span> <span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">onclick=</span><span class="s">"javascript:trim()"</span> <span class="nt">&gt;</span>Trim<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:trim()&quot;</span> <span class="nt">&gt;</span>Trim<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">trim</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#txt-trim'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
-    <span class="nx">Trim</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#txt-trim'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="p">)</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-trim&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
+    <span class="nx">Trim</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-trim&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="p">)</span>
   <span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 
@@ -290,7 +290,7 @@
       </section>
 
       <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <img style="height:auto!important;" src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
         <h4 class="section-title author-name">emalherbi and ivanhoinacki</h4>
         <p class="author-bio">The Javascript Utils!</p>
       </section>
@@ -326,12 +326,17 @@
 		</footer>
 	</div>
 
-	<!--script type="text/javascript">
-		window.onload = function(){
-			var $elem = $('.col-sm-10');
-				$('html, body').animate({scrollTop: $elem.height()}, 1000);
-		}
-	</script-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-52901652-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 
 	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>

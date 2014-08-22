@@ -1,40 +1,19 @@
 ---
 layout: post
-title: CNPJ Validate 
+title: CNPJ Validate
 categories: [C]
 tags: [table, columns, cnpj, Validate ]
 description: CNPJ Validate  
 ---
 
-CNPJ Validate 
-
-## Example
-
-<table id="table" class="table" >
-  
-</table>
-
-
-
-<script>
-
-</script>
+CNPJ Validate
 
 ## Example <i>(code </>)</i>
-
-#### html
-
-{% highlight html %}
-<table id="table" class="table" >
-
-</table>
-
-{% endhighlight %}
 
 #### js
 
 {% highlight javascript %}
-var CNPJ = 
+var CNPJ =
 {
   validate : function(cnpj) {
 	var numeros, digitos, soma, i, resultado, pos, tamanho, digitos_iguais;
@@ -63,7 +42,7 @@ var CNPJ =
 			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
 			if (resultado != digitos.charAt(0))
 				return false;
-				
+
 			tamanho = tamanho + 1;
 			numeros = cnpj.substring(0,tamanho);
 			soma = 0;
@@ -75,14 +54,14 @@ var CNPJ =
 					pos = 9;
 			}
 			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-			
+
 			if (resultado != digitos.charAt(1))
-				return false;			
+				return false;
 
 			return true;
-		} 
-		else return false;	
+		}
+		else return false;
 	}
 };
-		
+
 {% endhighlight %}

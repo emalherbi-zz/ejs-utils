@@ -51,7 +51,7 @@
 			
 			
 			<a class="navbar-brand" href="/">
-				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+				<img style="height:auto!important;" src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
 				
 			</a>
 		</div>
@@ -160,85 +160,69 @@
 	  <div class="article_body">
 	  <p>Mask</p>
 
-<h2 id="example">Example</h2>
-
-<table id="table" class="table">
-  
-</table>
-
-<script>
-
-</script>
-
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
-
-<h4 id="html">html</h4>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"table"</span> <span class="na">class=</span><span class="s">"table"</span> <span class="nt">&gt;</span>
-
-<span class="nt">&lt;/table&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Mask</span> <span class="o">=</span>
 <span class="p">{</span>
-	<span class="na">mascara</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">mascara</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
 		<span class="nx">v_obj</span> <span class="o">=</span> <span class="nx">o</span>
 		<span class="nx">v_fun</span> <span class="o">=</span> <span class="nx">f</span>
-		<span class="nx">setTimeout</span><span class="p">(</span><span class="s2">"Mask.execmascara()"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="nx">setTimeout</span><span class="p">(</span><span class="s2">&quot;Mask.execmascara()&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 	<span class="p">},</span>
-	<span class="nx">execmascara</span> <span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">execmascara</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 		<span class="nx">v_obj</span><span class="p">.</span><span class="nx">value</span><span class="o">=</span><span class="nx">v_fun</span><span class="p">(</span><span class="nx">v_obj</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
 	<span class="p">},</span>
-	<span class="nx">mdata</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{2})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1/$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{2})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1/$2"</span><span class="p">)</span>
+	<span class="nx">mdata</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{2})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1/$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{2})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1/$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mhora</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{2})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1:$2"</span><span class="p">)</span>
+	<span class="nx">mhora</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{2})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1:$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mtelefone</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\d\d)(\d)</span><span class="sr">/g</span><span class="p">,</span><span class="s2">"($1) $2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{4})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1 - $2"</span><span class="p">)</span>
+	<span class="nx">mtelefone</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^(\d\d)(\d)/g</span><span class="p">,</span><span class="s2">&quot;($1) $2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{4})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1 - $2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mcep</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{2})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1.$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{3})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1-$2"</span><span class="p">)</span>
+	<span class="nx">mcep</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{2})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1.$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1-$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mcpf</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{3})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1.$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{3})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1.$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{3})(\d{1,2})</span><span class="sr">$/</span><span class="p">,</span><span class="s2">"$1-$2"</span><span class="p">)</span>
+	<span class="nx">mcpf</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1.$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1.$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{3})(\d{1,2})$/</span><span class="p">,</span><span class="s2">&quot;$1-$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mcnpj</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\d{2})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1.$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\d{2})\.(\d{3})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1.$2.$3"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.(\d{3})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">".$1/$2"</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d{4})(\d)</span><span class="sr">/</span><span class="p">,</span><span class="s2">"$1-$2"</span><span class="p">)</span>
+	<span class="nx">mcnpj</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^(\d{2})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1.$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^(\d{2})\.(\d{3})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1.$2.$3&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\.(\d{3})(\d)/</span><span class="p">,</span><span class="s2">&quot;.$1/$2&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d{4})(\d)/</span><span class="p">,</span><span class="s2">&quot;$1-$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mnumeros</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
+	<span class="nx">mnumeros</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 	<span class="p">},</span>
-	<span class="nx">mvalor</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d)(\d{2})</span><span class="sr">$/</span><span class="p">,</span><span class="s2">"$1.$2"</span><span class="p">)</span>
+	<span class="nx">mvalor</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d)(\d{2})$/</span><span class="p">,</span><span class="s2">&quot;$1.$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">},</span>
-	<span class="nx">mvalorbr</span> <span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\D</span><span class="sr">/g</span><span class="p">,</span><span class="s2">""</span><span class="p">)</span>
-		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(\d)(\d{2})</span><span class="sr">$/</span><span class="p">,</span><span class="s2">"$1,$2"</span><span class="p">)</span>
+	<span class="nx">mvalorbr</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\D/g</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="nx">v</span><span class="o">=</span><span class="nx">v</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d)(\d{2})$/</span><span class="p">,</span><span class="s2">&quot;$1,$2&quot;</span><span class="p">)</span>
 		<span class="k">return</span> <span class="nx">v</span>
 	<span class="p">}</span>
 <span class="p">};</span></code></pre></div>
@@ -253,7 +237,7 @@
 		  
 			
 				<li><a href="/categories.html#m-ref">
-					m <span>(2)</span>
+					m <span>(3)</span>
 					
 				</a></li>
 			
@@ -269,14 +253,14 @@
 			
 				<li>
 					<a href="/tags.html#table-ref">
-					table <span>(18)</span>
+					table <span>(19)</span>
 					,
 					</a>
 				</li>
 			
 				<li>
 					<a href="/tags.html#columns-ref">
-					columns <span>(17)</span>
+					columns <span>(18)</span>
 					,
 					</a>
 				</li>
@@ -323,7 +307,7 @@
       </section>
 
       <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <img style="height:auto!important;" src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
         <h4 class="section-title author-name">emalherbi and ivanhoinacki</h4>
         <p class="author-bio">The Javascript Utils!</p>
       </section>
@@ -336,7 +320,7 @@
 		  <li class="previous"><a href="/i/2013/01/14/inputonly.html" id="btnPrevious" title="Input">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/m/2013/01/16/money.html" id="btnNext" title="Money Format">Next &rarr;</a></li>
+		  <li class="next"><a href="/m/2013/01/16/menucontrol.html" id="btnNext" title="Menu">Next &rarr;</a></li>
 		  
 		</ul>
 
@@ -359,12 +343,17 @@
 		</footer>
 	</div>
 
-	<!--script type="text/javascript">
-		window.onload = function(){
-			var $elem = $('.col-sm-10');
-				$('html, body').animate({scrollTop: $elem.height()}, 1000);
-		}
-	</script-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-52901652-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 
 	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
