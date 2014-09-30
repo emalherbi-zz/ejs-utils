@@ -3,8 +3,8 @@
 	<channel>
 		<title></title>
 		<description></description>
-		<link>/</link>
-		<atom:link href="/" rel="self" type="application/rss+xml" />
+		<link>http://emalherbi.github.io/ejs-utils//</link>
+		<atom:link href="http://emalherbi.github.io/ejs-utils//" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>Table</title>
@@ -38,8 +38,8 @@
 
 </description>
 				<pubDate>Sun, 20 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/t/2013/01/20/table.html</link>
-				<guid isPermaLink="true">/t/2013/01/20/table.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//t/2013/01/20/table.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//t/2013/01/20/table.html</guid>
 			</item>
 		
 			<item>
@@ -58,8 +58,8 @@
 
 </description>
 				<pubDate>Sat, 19 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/t/2013/01/19/timeout.html</link>
-				<guid isPermaLink="true">/t/2013/01/19/timeout.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//t/2013/01/19/timeout.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//t/2013/01/19/timeout.html</guid>
 			</item>
 		
 			<item>
@@ -88,8 +88,8 @@
 
 </description>
 				<pubDate>Fri, 18 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/s/2013/01/18/select.html</link>
-				<guid isPermaLink="true">/s/2013/01/18/select.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//s/2013/01/18/select.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//s/2013/01/18/select.html</guid>
 			</item>
 		
 			<item>
@@ -108,8 +108,8 @@
 
 </description>
 				<pubDate>Thu, 17 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/r/2013/01/17/radio.html</link>
-				<guid isPermaLink="true">/r/2013/01/17/radio.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//r/2013/01/17/radio.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//r/2013/01/17/radio.html</guid>
 			</item>
 		
 			<item>
@@ -148,8 +148,8 @@
 
 </description>
 				<pubDate>Wed, 16 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/m/2013/01/16/money.html</link>
-				<guid isPermaLink="true">/m/2013/01/16/money.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//m/2013/01/16/money.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//m/2013/01/16/money.html</guid>
 			</item>
 		
 			<item>
@@ -179,8 +179,8 @@
 
 </description>
 				<pubDate>Wed, 16 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/m/2013/01/16/menucontrol.html</link>
-				<guid isPermaLink="true">/m/2013/01/16/menucontrol.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//m/2013/01/16/menucontrol.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//m/2013/01/16/menucontrol.html</guid>
 			</item>
 		
 			<item>
@@ -256,8 +256,8 @@
 
 </description>
 				<pubDate>Tue, 15 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/m/2013/01/15/mask.html</link>
-				<guid isPermaLink="true">/m/2013/01/15/mask.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//m/2013/01/15/mask.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//m/2013/01/15/mask.html</guid>
 			</item>
 		
 			<item>
@@ -283,8 +283,8 @@
 
 </description>
 				<pubDate>Mon, 14 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/i/2013/01/14/inputonly.html</link>
-				<guid isPermaLink="true">/i/2013/01/14/inputonly.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//i/2013/01/14/inputonly.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//i/2013/01/14/inputonly.html</guid>
 			</item>
 		
 			<item>
@@ -306,8 +306,8 @@
 
 </description>
 				<pubDate>Sun, 13 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/f/2013/01/13/formClear.html</link>
-				<guid isPermaLink="true">/f/2013/01/13/formClear.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//f/2013/01/13/formClear.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//f/2013/01/13/formClear.html</guid>
 			</item>
 		
 			<item>
@@ -333,8 +333,8 @@
 
 </description>
 				<pubDate>Sat, 12 Jan 2013 00:00:00 -0200</pubDate>
-				<link>/d/2013/01/12/divposition.html</link>
-				<guid isPermaLink="true">/d/2013/01/12/divposition.html</guid>
+				<link>http://emalherbi.github.io/ejs-utils//d/2013/01/12/divposition.html</link>
+				<guid isPermaLink="true">http://emalherbi.github.io/ejs-utils//d/2013/01/12/divposition.html</guid>
 			</item>
 		
 	</channel>
