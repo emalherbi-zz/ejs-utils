@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Trim</title>
+	<title>Data Format</title>
 	
-	<meta name="description" content="Strip whitespace from the beginning and end of a string">
+	<meta name="description" content="returns Date format Br or Sql and time now">
 	
 	<meta name="author" content="emalherbi and ivanhoinacki">
 
@@ -144,7 +144,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>Trim </h1>
+  <h1>Data Format </h1>
 </div>
 
 <article>
@@ -153,48 +153,34 @@
 	 <span class="post-date">
 	   
 	   January
-	   3rd,
-	     
+	   11th,
+	   
 	   2013
 	 </span>
 	  <div class="article_body">
-	  <p>Strip whitespace from the beginning and end of a string</p>
-
-<h2 id="example">Example</h2>
-
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <input type="text" class="form-control" id="txt-trim" name="txt-trim" value="  Trim  " />
-  </div>
-  <button type="button" class="btn btn-default" onclick="javascript:trim()">Trim</button>
-</form>
-
-<script>
-  function trim() {
-    $('#txt-trim').val(
-      Trim.run( $('#txt-trim').val() )
-    );
-  }
-</script>
+	  <p>Data Format</p>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
-<h4 id="html">html</h4>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span> <span class="na">role=</span><span class="s">&quot;form&quot;</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-group&quot;</span> <span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;txt-trim&quot;</span> <span class="na">name=</span><span class="s">&quot;txt-trim&quot;</span> <span class="na">value=</span><span class="s">&quot;  Trim  &quot;</span> <span class="nt">&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">onclick=</span><span class="s">&quot;javascript:trim()&quot;</span> <span class="nt">&gt;</span>Trim<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div>
-
 <h4 id="js">js</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">trim</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-trim&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
-    <span class="nx">Trim</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-trim&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="p">)</span>
-  <span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Data</span> <span class="o">=</span>
+<span class="p">{</span>
+	<span class="nx">nowBr</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* using jquery ui */</span>
+		<span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span> <span class="s1">&#39;dd/mm/yy&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="p">);</span>
+	<span class="p">},</span>
+	<span class="nx">nowSql</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* using jquery ui */</span>
+		<span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="nx">datepicker</span><span class="p">.</span><span class="nx">formatDate</span><span class="p">(</span> <span class="s1">&#39;yy-mm-dd&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="p">);</span>
+	<span class="p">},</span>
+	<span class="nx">today</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* using javascript */</span>
+		<span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+	    <span class="k">return</span> <span class="p">((</span><span class="nx">that</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="o">?</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="p">(((</span><span class="nx">that</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="o">?</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">that</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+	<span class="p">},</span>
+	<span class="nx">timeNow</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* using javascript */</span>
+		<span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+     	<span class="k">return</span> <span class="p">((</span><span class="nx">that</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="o">?</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span> <span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span> <span class="p">((</span><span class="nx">that</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="o">?</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span> <span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span> <span class="p">((</span><span class="nx">that</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span><span class="o">?</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">};</span></code></pre></div>
 
 
 	  </div>
@@ -205,8 +191,8 @@
 		  
 		  
 			
-				<li><a href="/categories.html#t-ref">
-					t <span>(4)</span>
+				<li><a href="/categories.html#d-ref">
+					d <span>(3)</span>
 					
 				</a></li>
 			
@@ -221,43 +207,29 @@
 		  
 			
 				<li>
-					<a href="/tags.html#trim-ref">
-					trim <span>(1)</span>
+					<a href="/tags.html#table-ref">
+					table <span>(19)</span>
 					,
 					</a>
 				</li>
 			
 				<li>
-					<a href="/tags.html#whitespace-ref">
-					whitespace <span>(1)</span>
+					<a href="/tags.html#columns-ref">
+					columns <span>(18)</span>
 					,
 					</a>
 				</li>
 			
 				<li>
-					<a href="/tags.html#characters-ref">
-					characters <span>(1)</span>
+					<a href="/tags.html#Data-ref">
+					Data <span>(1)</span>
 					,
 					</a>
 				</li>
 			
 				<li>
-					<a href="/tags.html#beginning-ref">
-					beginning <span>(1)</span>
-					,
-					</a>
-				</li>
-			
-				<li>
-					<a href="/tags.html#end-ref">
-					end <span>(1)</span>
-					,
-					</a>
-				</li>
-			
-				<li>
-					<a href="/tags.html#string-ref">
-					string <span>(2)</span>
+					<a href="/tags.html#Format-ref">
+					Format <span>(1)</span>
 					
 					</a>
 				</li>
@@ -272,7 +244,7 @@
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Trim"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Data Format"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
           Twitter
@@ -300,10 +272,10 @@
 
 		<ul class="pager" id="next" >
 		  
-		  <li class="previous"><a href="/v/2013/01/02/validate-field.html" id="btnPrevious" title="Validate Field">&larr; Previous</a></li>
+		  <li class="previous"><a href="/d/2013/01/10/dig-only.html" id="btnPrevious" title="Dig">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="/t/2013/01/04/table-calculate.html" id="btnNext" title="Table Calculate Us/Br">Next &rarr;</a></li>
+		  <li class="next"><a href="/d/2013/01/12/divposition.html" id="btnNext" title="Div Position">Next &rarr;</a></li>
 		  
 		</ul>
 

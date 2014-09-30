@@ -6,7 +6,7 @@
 	
 	<meta name="description" content="Calculate Us/Br values from table">
 	
-	<meta name="author" content="emalherbi and ivanhoinacki.">
+	<meta name="author" content="emalherbi and ivanhoinacki">
 
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,10 @@
 	<![endif]-->
 
 	<!-- Le styles -->
-	<link href="http://emalherbi.github.io/ejs-utils/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="http://emalherbi.github.io/ejs-utils/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="http://emalherbi.github.io/ejs-utils/assets/resources/syntax/syntax.css" rel="stylesheet">
-	<link href="http://emalherbi.github.io/ejs-utils/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 
 	<!-- Le fav and touch icons -->
 	<!-- Update these with your own images
@@ -30,7 +30,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 	-->
 
-	<link rel="alternate" type="application/rss+xml" title="" href="http://emalherbi.github.io/ejs-utils/feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 </head>
 
 <body>
@@ -50,8 +50,8 @@
 			
 			
 			
-			<a class="navbar-brand" href="http://emalherbi.github.io/ejs-utils/">
-				<img src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
+			<a class="navbar-brand" href="/">
+				<img style="height:auto!important;" src="http://www.gravatar.com/avatar/?s=35" class="img-circle" />
 				
 			</a>
 		</div>
@@ -59,9 +59,9 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="http://emalherbi.github.io/ejs-utils/">Home</a></li>
-				<li><a href="http://emalherbi.github.io/ejs-utils/categories.html">Categories</a></li>
-				<li><a href="http://emalherbi.github.io/ejs-utils/tags.html">Tags</a></li>
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
@@ -72,9 +72,9 @@
 			<i class="fa fa-bars"></i>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="http://emalherbi.github.io/ejs-utils/"><i class="fa fa-home"></i>Home</a></li>
-			<li><a href="http://emalherbi.github.io/ejs-utils/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
-			<li><a href="http://emalherbi.github.io/ejs-utils/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
 			<li class="divider"></li>
 			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
 		</ul>
@@ -83,11 +83,11 @@
 	<div class="col-sm-3 sidebar hidden-xs">
 		<! -- sidebar.html -->
 <header class="sidebar-header" role="banner">
-	<a href="http://emalherbi.github.io/ejs-utils/">
-		<img src="http://emalherbi.github.io/ejs-utils/assets/img/js-logo.png" class="img-circle" />
+	<a href="/">
+		<img src="/assets/img/js-logo.png" class="img-circle" />
 	</a>
 	<h3 class="title">
-        <a href="http://emalherbi.github.io/ejs-utils/"></a>
+        <a href="/"></a>
     </h3>
 </header>
 
@@ -102,14 +102,14 @@
 		
 		<li>
 			<a class="btn btn-default btn-sm" href="https://github.com/emalherbi">
-				<i class="fa fa-github-alt fa-lg"></i>
+				<i class="fa fa-github fa-lg"></i>
 			</a>
 		</li>
 		
 		
 		<li>
 			<a class="btn btn-default btn-sm" href="https://github.com/ivanhoinacki">
-				<i class="fa fa-github-alt fa-lg"></i>
+				<i class="fa fa-github fa-lg"></i>
 			</a>
 		</li>
 		
@@ -118,12 +118,24 @@
 	</ul>
 	<ul id="contact-list-secondary" class="list-unstyled list-inline">
 		
-		
 		<li>
-			<a class="btn btn-default btn-sm" href="http://emalherbi.github.io/ejs-utils/feed.xml">
-				<i class="fa fa-rss fa-lg"></i>
+			<a class="btn btn-default btn-sm" href="http://emalherbi.com">
+				<i class="fa fa-html5 fa-lg"></i>
 			</a>
 		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="http://ivanhoinacki.com">
+				<i class="fa fa-html5 fa-lg"></i>
+			</a>
+		</li>
+		
+		<!--li>
+			<a class="btn btn-default btn-sm" href="/">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li-->
 	</ul>
 </div>
 <! -- sidebar.html end -->
@@ -134,13 +146,13 @@
 		<div class="page-header">
   <h1>Table Calculate Us/Br </h1>
 </div>
-	
+
 <article>
 
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   January 
+	   January
 	   4th,
 	   
 	   2013
@@ -232,53 +244,53 @@ function calculate() {
 		  <li><i class="fa fa-folder-open"></i></li>
 		  
 		  
-			 
-				<li><a href="http://emalherbi.github.io/ejs-utils/categories.html#t-ref">
-					t <span>(2)</span>
+			
+				<li><a href="/categories.html#t-ref">
+					t <span>(4)</span>
 					
 				</a></li>
 			
 		  
 		</ul>
-		  
+		
 
 		
 		<ul class="list-inline">
 		  <li><i class="fa fa-tags"></i></li>
 		  
 		  
-			 
+			
 				<li>
-					<a href="http://emalherbi.github.io/ejs-utils/tags.html#table-ref">
-					table <span>(1)</span>
+					<a href="/tags.html#table-ref">
+					table <span>(19)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
-					<a href="http://emalherbi.github.io/ejs-utils/tags.html#columns-ref">
-					columns <span>(1)</span>
+					<a href="/tags.html#columns-ref">
+					columns <span>(18)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
-					<a href="http://emalherbi.github.io/ejs-utils/tags.html#calculate-ref">
+					<a href="/tags.html#calculate-ref">
 					calculate <span>(1)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
-					<a href="http://emalherbi.github.io/ejs-utils/tags.html#us-ref">
-					us <span>(1)</span>
+					<a href="/tags.html#us-ref">
+					us <span>(2)</span>
 					,
 					</a>
 				</li>
-			 
+			
 				<li>
-					<a href="http://emalherbi.github.io/ejs-utils/tags.html#br-ref">
-					br <span>(1)</span>
+					<a href="/tags.html#br-ref">
+					br <span>(2)</span>
 					
 					</a>
 				</li>
@@ -286,7 +298,7 @@ function calculate() {
 		  
 		  
 		</ul>
-		  
+		
 
 		<hr>
 
@@ -311,28 +323,28 @@ function calculate() {
       </section>
 
       <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
-        <h4 class="section-title author-name">emalherbi and ivanhoinacki.</h4>
+        <img style="height:auto!important;" src="http://www.gravatar.com/avatar/" class="img-rounded author-image" />
+        <h4 class="section-title author-name">emalherbi and ivanhoinacki</h4>
         <p class="author-bio">The Javascript Utils!</p>
       </section>
     </div>
 
     <div class="clearfix"></div>
 
-		<ul class="pager">
+		<ul class="pager" id="next" >
 		  
-		  <li class="previous"><a href="http://emalherbi.github.io/ejs-utils/t/2013/01/03/trim.html" title="Trim">&larr; Previous</a></li>
+		  <li class="previous"><a href="/t/2013/01/03/trim.html" id="btnPrevious" title="Trim">&larr; Previous</a></li>
 		  
 		  
-			<li class="next disabled"><a>Next &rarr;</a>
+		  <li class="next"><a href="/b/2013/01/05/scroll.html" id="btnNext" title="Scroll to ID">Next &rarr;</a></li>
 		  
 		</ul>
 
 		<hr>
 	</div>
-	
+
 	<div class="col-sm-2 sidebar-2">
-	
+
 	</div>
 </article>
 <div class="clearfix"></div>
@@ -342,15 +354,27 @@ function calculate() {
 		<footer>
 			<hr/>
 			<p>
-				&copy; 2014 emalherbi and ivanhoinacki. with Jekyll.
+				&copy; 2014 emalherbi and ivanhoinacki with Jekyll.
 			</p>
 		</footer>
 	</div>
 
-	<script type="text/javascript" src="http://emalherbi.github.io/ejs-utils/assets/resources/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="http://emalherbi.github.io/ejs-utils/assets/resources/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="http://emalherbi.github.io/ejs-utils/dist/ejs-utils.js"></script>
-	<script type="text/javascript" src="http://emalherbi.github.io/ejs-utils/assets/js/app.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-52901652-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/dist/ejs-utils.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
 </body>
 </html>
 
