@@ -16,7 +16,7 @@
     "emalherbi"
   ],
   "license": "MIT",
-  "private": true,
+  "homepage": "https://github.com/emalherbi/ejs-utils",
   "ignore": [
     "**/.*",
     "node_modules",
