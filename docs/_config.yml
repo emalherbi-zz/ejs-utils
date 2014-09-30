@@ -74,4 +74,4 @@ tags_path: tags.html
 #highlighter: pygments
 
 
-BASE_PATH: #http://ivanhoinacki.github.io/ejs-utils
+BASE_PATH: http://emalherbi.github.io/ejs-utils/
