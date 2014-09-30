@@ -3,9 +3,7 @@ ejs-utils
 
 Functions in jquery, jquery-ui, to help developers in simple situations of your workday.
 
-
-
-![alt tag](http://bower.io/img/bower-logo.png)
+<img align="center" height="250" src="http://bower.io/img/bower-logo.png">
 
 ## Bower.io
 
