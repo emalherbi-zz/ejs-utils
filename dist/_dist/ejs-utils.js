@@ -294,7 +294,8 @@ var Money =
 	    return (((sign)?'':'-') + num + ',' + cents);
 	},
 	formatUs: function(num) {
-		return num.replace(/\./g, "").replace(/,/, ".");
+		var n = num.replace(/\./g, "").replace(/,/, ".");
+		return Math.round(n * 100) / 100;
 	}
 }
 
