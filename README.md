@@ -13,12 +13,9 @@ This package is available on Bower.
 
 See complete command line reference at [bower.io/docs/api/](http://bower.io/docs/api/)
 
-#### Installing packages and dependencies
+#### Installing
 
 ```sh
-# install dependencies listed in bower.json
-$ bower install
-
 # install a package and add it to bower.json
 $ bower install ejs-utils --save
 
@@ -26,7 +23,7 @@ $ bower install ejs-utils --save
 $ bower install ejs-utils#<version> --save
 ```
 
-### About Bower.io
+#### About Bower.io
 
 > A package manager for the web
 
@@ -36,9 +33,7 @@ Bower runs over Git, and is package-agnostic. A packaged component can be made u
 
 **View complete docs on [bower.io](http://bower.io)**
 
-[View all packages available through Bower's registry](http://bower.io/search/).
-
-### Install
+#### Install Bower.io
 
 ```sh
 $ npm install -g bower
