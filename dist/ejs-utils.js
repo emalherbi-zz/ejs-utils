@@ -256,6 +256,23 @@ var Mask =
 		v=v.replace(/\D/g,"")
 		v=v.replace(/(\d)(\d{2})$/,"$1,$2")
 		return v
+	},
+	mfvalorbr : function(v) { /* format valor focus out */
+		if ( v.indexOf(',') != -1 ) {
+			v=v.split(",");
+			var t = v[0].replace(/\D/g,"");
+			var d = v[1].replace(/\D/g,"");
+			if ( d.length == 1 ) {
+				d = d + '0';
+			}
+			v = t + ',' + d;
+		}
+		else {
+			v = v.replace(/\D/g,"");
+			if ( v == '' ) return '';
+			v = v + ',00';
+		}
+		return v;
 	}
 };
 
