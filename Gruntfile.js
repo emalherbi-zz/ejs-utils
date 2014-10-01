@@ -23,11 +23,19 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-            dot: true,
-            dest: 'dist',
-            src: ['ejs-utils.js']
-          }]
-        }
+          dot: true,
+          dest: 'dist',
+          src: ['ejs-utils.js']
+        }]
+      },
+      site: {
+        files: [{
+          expand: true,
+          dot: true,
+          dest: 'docs/_site',
+          src: ['dist/*.js']
+        }]
+      }
     },
 
     /* js file minification */
@@ -44,22 +52,20 @@ module.exports = function(grunt) {
     'gh-pages': {
       options: {
         base: 'docs/_site/',
-        message: 'Auto-generated commit'
+        message: 'auto-generated commit'
       },
       src: ['**/*']
-    },
+    }
 
 	});
 
 	// tasks
-  grunt.registerTask('site', [
-      'gh-pages'
-  ]);
-
   grunt.registerTask('build', [
       'clean',
-      'copy',
+      'copy:dist',
       'uglify',
+      'copy:site',
+      'gh-pages'
   ]);
 
   grunt.registerTask('deploy', [
