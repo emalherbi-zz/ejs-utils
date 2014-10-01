@@ -51,12 +51,14 @@ module.exports = function(grunt) {
 			}
     },
 
+    /* build jekyll */
     shell: {
       jekyllBuild: {
         command: 'jekyll build --source docs --destination docs/_site'
       }
     },
 
+    /* commit on gh-pages github */
     'gh-pages': {
       options: {
         base: 'docs/_site/',
