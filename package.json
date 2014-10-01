@@ -12,6 +12,7 @@
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-gh-pages": "^0.9.1",
     "grunt-install-dependencies": "^0.2.0",
-    "grunt-notify": "^0.3.1"
+    "grunt-notify": "^0.3.1",
+    "grunt-shell": "^1.1.1"
   }
 }

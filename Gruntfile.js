@@ -7,6 +7,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	// Load the plugin that minify and concatenate ".js" files.
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Run shell commands
+  grunt.loadNpmTasks('grunt-shell');
   // Publish to GitHub Pages with Grunt
   grunt.loadNpmTasks('grunt-gh-pages');
 	// Automatic notifications when tasks fail.
@@ -49,6 +51,12 @@ module.exports = function(grunt) {
 			}
     },
 
+    shell: {
+      jekyllBuild: {
+        command: 'jekyll build --source docs --destination docs/_site'
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'docs/_site/',
@@ -64,6 +72,7 @@ module.exports = function(grunt) {
       'clean',
       'copy:dist',
       'uglify',
+      'shell',
       'copy:site',
       'gh-pages'
   ]);
