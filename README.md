@@ -9,10 +9,6 @@ Functions in jquery, jquery-ui, to help developers in simple situations of your 
 
 This package is available on Bower.
 
-### Usage
-
-See complete command line reference at [bower.io/docs/api/](http://bower.io/docs/api/)
-
 #### Installing
 
 ```sh
@@ -22,16 +18,6 @@ $ bower install ejs-utils --save
 # install specific version of a package and add it to bower.json
 $ bower install ejs-utils#<version> --save
 ```
-
-#### About Bower.io
-
-> A package manager for the web
-
-Bower offers a generic, unopinionated solution to the problem of **front-end package management**, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. There are no system wide dependencies, no dependencies are shared between different apps, and the dependency tree is flat.
-
-Bower runs over Git, and is package-agnostic. A packaged component can be made up of any type of asset, and use any type of transport (e.g., AMD, CommonJS, etc.).
-
-**View complete docs on [bower.io](http://bower.io)**
 
 #### Install Bower.io
 
