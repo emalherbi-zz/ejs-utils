@@ -158,13 +158,11 @@
 	   2013
 	 </span>
 	  <div class="article_body">
-	  <p>Go To the Top of Body With Animate </p>
+	  <p>Go To the Top of Body With Animate</p>
 
 <h2 id="example">Example</h2>
 
-<p>Top </p>
-
-<div class="modal-footer"><button onclick="javascript:setdown()" type="button" class="btn btn-primary"> Click Go Bottom </button></div>
+<p>Top</p>
 
 <p>↓</p>
 
@@ -203,55 +201,30 @@
 	text-align:center;!important;
 }
 
-@media screen and (max-height: 450px), (max-height: 450px) {    
-    .modal-footer{
+@media screen and (max-height: 450px), (max-height: 450px) {
+  .modal-footer{
 		text-align:center;!important;
 	}
 }
 </style>
 
 <script>
-
-function setdown(){
-	var $elem = $('.col-sm-10');	
-	$('html, body').animate({scrollTop: $elem.height()}, 800);	
-}
-
 function goTop(){
-	$("#myModal").modal('hide');   
-	Body.top();	
+	Body.top();
 }
-
-var Body = {
-	top : function() {
-		$('html, body').animate({scrollTop:0}, 'slow');
-
-		return true;
-	}
-};		
-
 </script>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
 <h4 id="html">html</h4>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&quot;table&quot;</span> <span class="na">class=</span><span class="s">&quot;table&quot;</span> <span class="nt">&gt;</span> 	
- <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btnGoTop&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="nt">&gt;</span>Click Go Top<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/table&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;btnGoTop&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="nt">&gt;</span>Click Go Top<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
 <h4 id="js">js</h4>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#btnGoTop&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>		
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#btnGoTop&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">Body</span><span class="p">.</span><span class="nx">top</span><span class="p">();</span>
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">Body</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="nx">top</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
- 	  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;html, body&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">scrollTop</span><span class="o">:</span><span class="mi">0</span><span class="p">},</span> <span class="s1">&#39;slow&#39;</span><span class="p">);</span>
-	  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-   <span class="p">}</span>
-<span class="p">};</span></code></pre></div>
+<span class="p">});</span></code></pre></div>
 
 <div class="modal-footer"><button onclick="javascript:goTop()" type="button" class="btn btn-primary"> Click Go Top </button></div>
 
