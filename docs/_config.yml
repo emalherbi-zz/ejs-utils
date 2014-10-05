@@ -1,6 +1,6 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
-paginate: 10 # pagination based on number of posts
+paginate: 100 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 #pygments: false
@@ -12,7 +12,7 @@ defaults:
     scope:
       path: "" # empty string for all files
     values:
-      title: Web ejs utils
+      title: ejs-utils
 
 description:
 author:
@@ -23,7 +23,7 @@ author:
   twitter:
   siteAuthor1: emalherbi.com
   siteAuthor2:  ivanhoinacki.com
-  bio: The Javascript Utils!
+  bio: Functions in jquery, jquery-ui, to help developers in simple situations of your workday!
   email_md5:
 
 utils:
@@ -74,4 +74,4 @@ tags_path: tags.html
 #highlighter: pygments
 
 
-BASE_PATH: http://emalherbi.github.io/ejs-utils/
+BASE_PATH: http://emalherbi.github.io/ejs-utils

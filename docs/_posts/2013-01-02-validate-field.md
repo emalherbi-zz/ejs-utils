@@ -3,7 +3,7 @@ layout: post
 title: Validate Field
 categories: [V]
 tags: [validate, field, input, alert, message]
-description: validate the field and displays a warning message if empty.
+description: Validate the field and displays a warning message if empty.
 ---
 
 Validate the field and displays a warning message if empty.

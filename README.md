@@ -14,9 +14,6 @@ This package is available on Bower.
 ```sh
 # install a package and add it to bower.json
 $ bower install ejs-utils --save
-
-# install specific version of a package and add it to bower.json
-$ bower install ejs-utils#<version> --save
 ```
 
 #### Install Bower.io
