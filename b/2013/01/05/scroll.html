@@ -179,17 +179,21 @@
 }
 </style>
 
+<div>
  	<a href="#" id="top" onclick="javascript:goBottom();">Click to scroll bottom </a>
+	<div id="star">&star;</div>
+	<a href="#" id="bottom" onclick="javascript:goTop();">Click to scroll top </a>
+</div>
 
-<pre><code>&lt;div id="star"&gt;&amp;star;&lt;/div&gt;
-
-&lt;a href="#" id="bottom" onclick="javascript:goTop();" &gt;Click to scroll top &lt;/a&gt; &lt;script&gt; function goTop(){   Scroll.go('top'); }
-</code></pre>
-
-<p>function goBottom(){
-  Scroll.go(‘bottom’);
+<script>
+function goTop(){
+  Scroll.go('top');
 }
-&lt;/script&gt;</p>
+
+function goBottom(){
+  Scroll.go('bottom');
+}
+</script>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
