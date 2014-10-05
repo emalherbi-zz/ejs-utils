@@ -180,19 +180,16 @@
 </style>
 
  	<a href="#" id="top" onclick="javascript:goBottom();">Click to scroll bottom </a>
+
 <pre><code>&lt;div id="star"&gt;&amp;star;&lt;/div&gt;
-&lt;a href="#" id="bottom" onclick="javascript:goTop();" &gt;Click to scroll top &lt;/a&gt;
+
+&lt;a href="#" id="bottom" onclick="javascript:goTop();" &gt;Click to scroll top &lt;/a&gt; &lt;script&gt; function goTop(){   Scroll.go('top'); }
 </code></pre>
 
-<script>
-function goTop(){
-  Scroll.go('top');
+<p>function goBottom(){
+  Scroll.go(‘bottom’);
 }
-
-function goBottom(){
-  Scroll.go('bottom');
-}
-</script>
+&lt;/script&gt;</p>
 
 <h2 id="example-icode-i">Example <i>(code &lt;/&gt;)</i></h2>
 
