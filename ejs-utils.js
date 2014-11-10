@@ -273,6 +273,11 @@ var Mask =
 			v = v + ',00';
 		}
 		return v;
+	},
+	mcfop : function(v) {
+		v=v.replace(/\D/g,"");
+		v=v.replace(/(\d{1})(\d)/,"$1.$2");
+		return v;
 	}
 };
 
