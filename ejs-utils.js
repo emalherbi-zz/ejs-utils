@@ -244,6 +244,13 @@ var Mask =
 		v=v.replace(/(\d{4})(\d)/,"$1-$2")
 		return v
 	},
+	mcnpjcpf:function(v) {
+		if (v.length > 14) {
+			return Mask.mcnpj(v);
+		} else {
+			return Mask.mcpf(v);
+		}
+	},
 	mnumeros : function(v) {
 		return v.replace(/\D/g,"")
 	},
