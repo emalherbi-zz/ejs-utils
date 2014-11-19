@@ -126,7 +126,7 @@ var Cmc7 = {
       firstPiece  : typedValue.substr(0,7)
       , secondPiece : typedValue.substr(8,10)
       , thirdPiece  : typedValue.substr(19,10)
-    };    
+    };
 
     var digits = {
       firstDigit : parseInt(typedValue.substr(7,1))
@@ -140,21 +140,21 @@ var Cmc7 = {
       , thirdDigit : this.modulo10(pieces.thirdPiece)
     };
 
-    if ( (calculatedDigits.secondDigit != digits.firstDigit) 
+    if ( (calculatedDigits.secondDigit != digits.firstDigit)
       || (calculatedDigits.firstDigit != digits.secondDigit)
       || (calculatedDigits.thirdDigit != digits.thirdDigit) ) {
         return false;
     }
-		
+
     return true;
-  }, 
+  },
   modulo10 : function(str) {
     var size = str.length - 1;
     var result = 0;
     var weight = 2;
 
     for (var i = size; i >= 0; i--) {
-		
+
 			total = str.substr(i, 1) * weight;
 
 			if (total > 9) {
@@ -173,7 +173,7 @@ var Cmc7 = {
         dv = 0;
     }
     return dv;
-  }, 
+  },
 	mod : function(dividend, divisor) {
 		return Math.round(dividend - (Math.floor(dividend/divisor)*divisor));
   }
@@ -352,24 +352,6 @@ var Mask =
 		return v;
 	}
 };
-
-/* Menu Controll */
-var Menu =
-{
-	hideAll: function() {
-		$('div[id^="div-"]').hide();
-	},
-	show: function(id) {
-		$('#div-'+id).show('slow');
-	},
-	init: function(id) {
-		Menu.hideAll();
-		Menu.show(id);
-	},
-	menuTitle: function(id, text) {
-		$('#'+id).text(text);
-	}
-}
 
 /* format a number in Brazil or US */
 var Money =

@@ -3,7 +3,6 @@
 paginate: 100 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-#pygments: false
 markdown: kramdown
 google-analytics-tracking-id: UA-52901652-2
 
@@ -26,52 +25,8 @@ author:
   bio: Functions in jquery, jquery-ui, to help developers in simple situations of your workday!
   email_md5:
 
-utils:
--   name: Table Calculate Us/Br
-    desc: Calculate Us/Br values from table.
--   name: Trim
-    desc: Strip whitespace from the beginning and end of a string.
--   name: Zeros
-    desc: Add zeros to the left of a string number.
--   name: Validate Field
-    desc: Validate the field and displays a warning message if empty.
--   name: Scroll to ID
-    desc: Go To ID of Body With Animate.
--   name: Body Top
-    desc: Go To the Top of Body With Animate.
--   name: Timeout
-    desc: set html Timeout .
--   name: Select
-    desc: return a specific attribute, remove an option from select, remove all options from select .
--   name: Radio
-    desc: return radio checked from form.
--   name: Money Format
-    desc: format a number in Brazil or US.
--   name: Mask
-    desc: mask for input fields.
--   name: Input
-    desc: input readonly , enabledField.
--   name: Form Clear
-    desc: Clear all input's form.
--   name: Div Position
-    desc: positions in specific div hide all div.
--   name: Data Format
-    desc: returns Date format Br or Sql and time now.
--   name: Dig
-    desc: returns only the input digits.
--   name: CPF Validate
-    desc: return CPF Validate.
--   name: CheckBox checked
-    desc: return CheckBox checked.
--   name: CNPJ Validate
-    desc: returns CNPJ Validate .
-
 rss_path:
 categories_path: categories.html
 tags_path: tags.html
-#encoding: utf-8
-#highlighter: rouge
-#highlighter: pygments
-
 
 BASE_PATH: http://emalherbi.github.io/ejs-utils
