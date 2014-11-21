@@ -56,7 +56,7 @@ Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com
 
 ## Creator
 
-Created by Eduardo Malherbi, and maintained by Eduardo Malherbi and Ivan Augusto Hoinacki.
+Created by Eduardo Malherbi, and maintained by [Bigodes Team](https://github.com/bigodes).
 
 
 
