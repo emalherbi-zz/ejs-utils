@@ -3,8 +3,13 @@ module.exports = function(grunt) {
 
 	// Load the plugin that clean files and directories.
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	// Load the plugin that copy files and directories.
-	grunt.loadNpmTasks('grunt-contrib-copy');
+  // Load the plugin that concatenate files.
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  // Load the plugin that copy files and directories.
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  // A convenient plugin but not necessary because you can just use 'copy' and 'delete' tasks in Grunt.
+  // Built this more to fiddle around with Grunt and to gain some knowledge HowTo build a plugin for Grunt.
+  grunt.loadNpmTasks('grunt-contrib-rename');
 	// Load the plugin that minify and concatenate ".js" files.
 	grunt.loadNpmTasks('grunt-contrib-uglify');
   // Run shell commands
@@ -18,7 +23,16 @@ module.exports = function(grunt) {
 	  pkg: grunt.file.readJSON('package.json'),
 
     /* clean directories */
-    clean: ['dist'],
+    clean: ['dist', 'src/concat.js'],
+
+    /* concat files */
+    concat: {
+      basic_and_extras: {
+        files: {
+          'src/concat.js': ['about.js', 'src/**/*.js'],
+        },
+      },
+    },
 
     /* put files not handled in other tasks here */
     copy: {
@@ -26,16 +40,27 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           dot: true,
-          dest: 'dist',
-          src: ['ejs-utils.js']
+          cwd: 'src/',
+          src: ['concat.js'],
+          dest: 'dist/'
         }]
       },
       site: {
         files: [{
           expand: true,
           dot: true,
-          dest: 'docs/_site',
-          src: ['dist/*.js']
+          src: ['dist/*.js'],
+          dest: 'docs/_site'
+        }]
+      }
+    },
+
+    /* rename files */
+    rename: {
+      main: {
+        files: [{
+          src: ['dist/concat.js'],
+          dest: 'dist/<%= pkg.name %>.js'
         }]
       }
     },
@@ -72,7 +97,9 @@ module.exports = function(grunt) {
 	// tasks
   grunt.registerTask('build', [
       'clean',
+      'concat',
       'copy:dist',
+      'rename',
       'uglify',
       'shell',
       'copy:site',
