@@ -16,6 +16,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   // Publish to GitHub Pages with Grunt
   grunt.loadNpmTasks('grunt-gh-pages');
+  // Bump package version, create tag, commit, push ...
+  grunt.loadNpmTasks('grunt-bump');
 	// Automatic notifications when tasks fail.
 	grunt.loadNpmTasks('grunt-notify');
 
@@ -90,6 +92,15 @@ module.exports = function(grunt) {
         message: 'auto-generated commit'
       },
       src: ['**/*']
+    },
+
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json'],
+        updateConfigs: ['pkg'],
+        commitFiles: ['-a'],
+        push: false
+      }
     }
 
 	});
@@ -103,7 +114,8 @@ module.exports = function(grunt) {
       'uglify',
       'shell',
       'copy:site',
-      'gh-pages'
+      'gh-pages',
+      'bump'
   ]);
 
   grunt.registerTask('deploy', [
