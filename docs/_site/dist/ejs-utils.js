@@ -421,9 +421,9 @@ var Table =
       var v = $( el ).find('input').val();
 
       if ( typeof v == 'undefined' ) {
-        vlr += Number(el.innerHTML.replace(".", "").replace(",", "."));
+        vlr += Number(el.innerHTML.replace("R$", "").replace("/./g", "").replace(",", "."));
       } else {
-        vlr += Number(v.replace(".", "").replace(",", "."));
+        vlr += Number(v.replace("/./g", "").replace(",", "."));
       }
     });
 
