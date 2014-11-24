@@ -1,6 +1,6 @@
 {
   "name": "ejs-utils",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Functions in jquery, jquery-ui, to help developers in simple situations of your workday.",
   "main": "ejs-utils.js",
   "author": "emalherbi",
