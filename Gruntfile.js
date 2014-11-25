@@ -24,11 +24,21 @@ module.exports = function(grunt) {
   grunt.initConfig({
 	  pkg: grunt.file.readJSON('package.json'),
 
+    banner: '/*!\n' +
+            ' * <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * Copyright 2010-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+            ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
+            ' */\n',
+
     /* clean directories */
     clean: ['dist', 'src/concat.js'],
 
     /* concat files */
     concat: {
+      options: {
+        banner: '<%= banner %>',
+        stripBanners: false
+      },
       basic_and_extras: {
         files: {
           'src/concat.js': ['about.js', 'src/**/*.js'],
@@ -94,6 +104,7 @@ module.exports = function(grunt) {
       src: ['**/*']
     },
 
+    /* update bower json */
     bump: {
       options: {
         files: ['package.json', 'bower.json'],
