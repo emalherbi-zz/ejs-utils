@@ -29,6 +29,10 @@ module.exports = function(grunt) {
 
     /* concat files */
     concat: {
+      options: {
+        banner: '/* Teste */',
+        stripBanners: false
+      },
       basic_and_extras: {
         files: {
           'src/concat.js': ['about.js', 'src/**/*.js'],
@@ -94,6 +98,7 @@ module.exports = function(grunt) {
       src: ['**/*']
     },
 
+    /* update bower json */
     bump: {
       options: {
         files: ['package.json', 'bower.json'],
