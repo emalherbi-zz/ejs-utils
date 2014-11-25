@@ -1,4 +1,9 @@
-/* Teste *//*!
+/*!
+ * ejs-utils v2.0.17 (http://emalherbi.github.io/ejs-utils/)
+ * Copyright 2010-2014 emalherbi
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*!
 * ejs-utils v2.0.9 (http://emalherbi.github.io/ejs-utils/)
 * Copyright 2010-2015 Bigodes, Inc.
 * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
