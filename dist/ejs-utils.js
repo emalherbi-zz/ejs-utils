@@ -1,14 +1,8 @@
 /*!
- * ejs-utils v2.0.19 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v2.0.20 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2014 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
-/*!
-* ejs-utils v2.0.9 (http://emalherbi.github.io/ejs-utils/)
-* Copyright 2010-2015 Bigodes, Inc.
-* Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
-*/
-
 /* Go To the Top of Body With Animate */
 var Body = {
   top : function() {
