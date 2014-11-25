@@ -36,7 +36,11 @@ module.exports = function(grunt) {
     /* concat files */
     concat: {
       options: {
+<<<<<<< HEAD
         banner: '<%= banner %>',
+=======
+        banner: '/* Teste */',
+>>>>>>> cd6e174a0fedf5e2b01d838dd2fe2e0566faae57
         stripBanners: false
       },
       basic_and_extras: {
