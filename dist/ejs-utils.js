@@ -1,7 +1,7 @@
 /*!
- * ejs-utils v2.0.17 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v2.0.18 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2014 emalherbi
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Licensed under MIT (http://emalherbi.github.io/ejs-utils/blob/master/LICENSE)
  */
 /*!
 * ejs-utils v2.0.9 (http://emalherbi.github.io/ejs-utils/)

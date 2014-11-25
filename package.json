@@ -1,13 +1,13 @@
 {
   "name": "ejs-utils",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "Functions in jquery, jquery-ui, to help developers in simple situations of your workday.",
   "main": "ejs-utils.js",
   "homepage": "http://emalherbi.github.io/ejs-utils/",
   "author": "emalherbi",
   "license": {
     "type": "MIT",
-    "url": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
+    "url": "http://emalherbi.github.io/ejs-utils/blob/master/LICENSE"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
