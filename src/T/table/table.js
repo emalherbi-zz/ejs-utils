@@ -17,7 +17,6 @@ var Table =
         }
       }
     });
-
     return vlr;
   },
   calculateBr : function(idtable, posfield) {
