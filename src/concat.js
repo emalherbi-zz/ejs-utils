@@ -1,5 +1,5 @@
 /*!
- * ejs-utils v2.0.23 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v2.0.24 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2014 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
@@ -419,10 +419,15 @@ var Table =
     $("#"+idtable+" tbody tr > td:nth-child("+posfield+")").each(function(i, el) {
       var v = $( el ).find('input').val();
 
-      if ( typeof v == 'undefined' ) {
-        vlr += Number(el.innerHTML.replace("R$", "").replace("/./g", "").replace(",", "."));
-      } else {
+      if ( typeof v !== 'undefined' ) {       
         vlr += Number(v.replace("/./g", "").replace(",", "."));
+      } else {
+        var v = $( el ).find('span').text();
+        if ( typeof v !== 'undefined' ) {       
+          vlr += Number(v.replace("R$", "").replace("/./g", "").replace(",", "."));
+        } else {
+          vlr += Number(el.innerHTML.replace("R$", "").replace("/./g", "").replace(",", "."));
+        }
       }
     });
 

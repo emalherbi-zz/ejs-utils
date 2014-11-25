@@ -6,10 +6,15 @@ var Table =
     $("#"+idtable+" tbody tr > td:nth-child("+posfield+")").each(function(i, el) {
       var v = $( el ).find('input').val();
 
-      if ( typeof v == 'undefined' ) {
-        vlr += Number(el.innerHTML.replace("R$", "").replace("/./g", "").replace(",", "."));
-      } else {
+      if ( typeof v !== 'undefined' ) {       
         vlr += Number(v.replace("/./g", "").replace(",", "."));
+      } else {
+        var v = $( el ).find('span').text();
+        if ( typeof v !== 'undefined' ) {       
+          vlr += Number(v.replace("R$", "").replace("/./g", "").replace(",", "."));
+        } else {
+          vlr += Number(el.innerHTML.replace("R$", "").replace("/./g", "").replace(",", "."));
+        }
       }
     });
 
