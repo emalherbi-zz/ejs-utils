@@ -24,5 +24,4 @@ var Util = (function (parent, $) {
 }(Util || {}, jQuery));
 
 // TEST
-
-console.log( Util.zeros.left('1', '2') );
+// console.log( Util.zeros.left('1', '2') );
