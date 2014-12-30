@@ -7,9 +7,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   // Load the plugin that copy files and directories.
   grunt.loadNpmTasks('grunt-contrib-copy');
-  // A convenient plugin but not necessary because you can just use 'copy' and 'delete' tasks in Grunt.
-  // Built this more to fiddle around with Grunt and to gain some knowledge HowTo build a plugin for Grunt.
-  grunt.loadNpmTasks('grunt-contrib-rename');
 	// Load the plugin that minify and concatenate ".js" files.
 	grunt.loadNpmTasks('grunt-contrib-uglify');
   // Run shell commands
@@ -23,6 +20,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 	  pkg: grunt.file.readJSON('package.json'),
+    properties: grunt.file.readJSON('properties.json'),
 
     banner: '/*!\n' +
             ' * <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
@@ -31,7 +29,7 @@ module.exports = function(grunt) {
             ' */\n',
 
     /* clean directories */
-    clean: ['dist', 'src/concat.js'],
+    clean: ['<%= properties.dist %>'],
 
     /* concat files */
     concat: {
@@ -41,40 +39,9 @@ module.exports = function(grunt) {
       },
       basic_and_extras: {
         files: {
-          'src/concat.js': ['about.js', 'src/**/*.js'],
+           "<%= properties.dist %>/<%= pkg.name %>.js" : ['<%= pkg.name %>.js'],
         },
       },
-    },
-
-    /* put files not handled in other tasks here */
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'src/',
-          src: ['concat.js'],
-          dest: 'dist/'
-        }]
-      },
-      site: {
-        files: [{
-          expand: true,
-          dot: true,
-          src: ['dist/*.js'],
-          dest: 'docs/_site'
-        }]
-      }
-    },
-
-    /* rename files */
-    rename: {
-      main: {
-        files: [{
-          src: ['dist/concat.js'],
-          dest: 'dist/<%= pkg.name %>.js'
-        }]
-      }
     },
 
     /* js file minification */
@@ -83,8 +50,8 @@ module.exports = function(grunt) {
         preserveComments: false
       },
 			build: {
-				src: 'dist/<%= pkg.name %>.js',
-				dest: 'dist/<%= pkg.name %>.min.js'
+				src: '<%= properties.dist %>/<%= pkg.name %>.js',
+				dest: '<%= properties.dist %>/<%= pkg.name %>.min.js'
 			}
     },
 
@@ -92,6 +59,18 @@ module.exports = function(grunt) {
     shell: {
       jekyllBuild: {
         command: 'jekyll build --source docs --destination docs/_site'
+      }
+    },
+
+    /* put files not handled in other tasks here */
+    copy: {
+      site: {
+        files: [{
+          expand: true,
+          dot: true,
+          src: ['dist/*.js'],
+          dest: 'docs/_site'
+        }]
       }
     },
 
@@ -120,8 +99,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
       'clean',
       'concat',
-      'copy:dist',
-      'rename',
       'uglify',
       'shell',
       'copy:site',

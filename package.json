@@ -1,6 +1,6 @@
 {
   "name": "ejs-utils",
-  "version": "2.0.31",
+  "version": "2.0.32",
   "description": "Functions in jquery, jquery-ui, to help developers in simple situations of your workday.",
   "main": "ejs-utils.js",
   "homepage": "http://emalherbi.github.io/ejs-utils/",
@@ -15,7 +15,6 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-rename": "0.0.3",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-gh-pages": "^0.9.1",
     "grunt-install-dependencies": "^0.2.0",
