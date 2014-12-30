@@ -155,7 +155,7 @@
 	   January
 	   1st,
 	     
-	   2013
+	   2015
 	 </span>
 	  <div class="article_body">
 	  <p>Add zeros to the left of a string number</p>
@@ -172,7 +172,8 @@
 <script>
   function addZeros() {
     $('#txt-zeros').val(
-      Zeros.add_left( $('#txt-zeros').val(), '5' )
+      // Zeros.add_left( $('#txt-zeros').val(), '5' ); // old version of ejs-utils
+      Util.zeros.left( $('#txt-zeros').val(), '5' ); // new version ejs-utils.3.0.0
     );
   }
 </script>
@@ -192,7 +193,8 @@
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">addZeros</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-zeros&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span>
-    <span class="nx">Zeros</span><span class="p">.</span><span class="nx">add_left</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-zeros&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="s1">&#39;5&#39;</span> <span class="p">)</span>
+    <span class="c1">// Zeros.add_left( $(&#39;#txt-zeros&#39;).val(), &#39;5&#39; ); // old version of ejs-utils</span>
+    <span class="nx">Util</span><span class="p">.</span><span class="nx">zeros</span><span class="p">.</span><span class="nx">left</span><span class="p">(</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#txt-zeros&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span> <span class="s1">&#39;5&#39;</span> <span class="p">);</span> <span class="c1">// new version ejs-utils.3.0.0</span>
   <span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 
@@ -293,10 +295,10 @@
 
 		<ul class="pager" id="next" >
 		  
-		  <li class="previous disabled"><a>&larr; Previous</a></li>
+		  <li class="previous"><a href="http://emalherbi.github.io/ejs-utils/t/2013/01/20/table.html" id="btnPrevious" title="Table">&larr; Previous</a></li>
 		  
 		  
-		  <li class="next"><a href="http://emalherbi.github.io/ejs-utils/v/2013/01/02/validate-field.html" id="btnNext" title="Validate Field">Next &rarr;</a></li>
+			<li class="next disabled"><a>Next &rarr;</a>
 		  
 		</ul>
 
