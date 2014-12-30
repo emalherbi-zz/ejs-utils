@@ -40,6 +40,7 @@ module.exports = function(grunt) {
       basic_and_extras: {
         files: {
            "<%= properties.dist %>/<%= pkg.name %>.js" : ['<%= pkg.name %>.js'],
+           "<%= properties.dist %>/<%= pkg.name %>.3.0.0.js" : ['<%= pkg.name %>.3.0.0.js'],
         },
       },
     },
@@ -49,10 +50,12 @@ module.exports = function(grunt) {
       options: {
         preserveComments: false
       },
-			build: {
-				src: '<%= properties.dist %>/<%= pkg.name %>.js',
-				dest: '<%= properties.dist %>/<%= pkg.name %>.min.js'
-			}
+      build: {
+        files: {
+          '<%= properties.dist %>/<%= pkg.name %>.min.js': ['<%= properties.dist %>/<%= pkg.name %>.js'],
+          '<%= properties.dist %>/<%= pkg.name %>.3.0.0.min.js': ['<%= properties.dist %>/<%= pkg.name %>.3.0.0.js']
+        }
+      }
     },
 
     /* build jekyll */
