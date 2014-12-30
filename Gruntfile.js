@@ -94,7 +94,7 @@ module.exports = function(grunt) {
         commit: true,
         commitFiles: ['-a'], // all Files
         push: true,
-        pushTo: 'upstream'
+        pushTo: 'origin'
       }
     }
 
