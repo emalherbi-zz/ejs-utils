@@ -295,7 +295,6 @@ var Util = (function (parent, $) {
     var v_fun = f;
 
     setTimeout(v_obj.value = v_fun(v_obj.value), 1);
-
     return true;
   };
 

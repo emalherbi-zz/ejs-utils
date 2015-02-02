@@ -1,23 +1,94 @@
 "use strict";
 
 /*!
- * ejs-utils v3.0.1 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v3.0.2 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2015 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
-// 6to5 ejs-utils.ES6.js --out-file ejs-utils.ES5.js
-
 var Util = (function (parent, $) {
+  var cmc7 = parent.cmc7 = parent.cmc7 || {};
   var cnpj = parent.cnpj = parent.cnpj || {};
   var cpf = parent.cpf = parent.cpf || {};
+  var date = parent.date = parent.date || {};
   var form = parent.form = parent.form || {};
   var html = parent.html = parent.html || {};
   var input = parent.input = parent.input || {};
   var link = parent.link = parent.link || {};
+  var mask = parent.mask = parent.mask || {};
   var money = parent.money = parent.money || {};
   var number = parent.number = parent.number || {};
   var string = parent.string = parent.string || {};
   var table = parent.table = parent.table || {};
+  var time = parent.time = parent.time || {};
+
+  /**
+   * CMC7 validate.
+   *
+   * @param {string}
+   * @return {boolean}
+   */
+  cmc7.validate = function (typedValue) {
+    var mod = function (dividend, divisor) {
+      return Math.round(dividend - Math.floor(dividend / divisor) * divisor);
+    };
+
+    var modulo10 = function (str) {
+      var size = str.length - 1;
+      var result = 0;
+      var weight = 2;
+
+      for (var i = size; i >= 0; i--) {
+        var total = str.substr(i, 1) * weight;
+
+        if (total > 9) {
+          result = result + 1 + (total - 10);
+        } else {
+          result = result + total;
+        }
+        if (weight == 1) {
+          weight = 2;
+        } else {
+          weight = 1;
+        }
+      }
+      var dv = 10 - mod(result, 10);
+      if (dv == 10) {
+        dv = 0;
+      }
+
+      return dv;
+    };
+
+    typedValue = typedValue.replace(/\D/g, "");
+    typedValue = typedValue.replace(/\s/g, "");
+    if (!typedValue) {
+      return false;
+    }
+
+    var pieces = {
+      firstPiece: typedValue.substr(0, 7),
+      secondPiece: typedValue.substr(8, 10),
+      thirdPiece: typedValue.substr(19, 10)
+    };
+
+    var digits = {
+      firstDigit: parseInt(typedValue.substr(7, 1)),
+      secondDigit: parseInt(typedValue.substr(18, 1)),
+      thirdDigit: parseInt(typedValue.substr(29, 1))
+    };
+
+    var calculatedDigits = {
+      firstDigit: modulo10(pieces.firstPiece),
+      secondDigit: modulo10(pieces.secondPiece),
+      thirdDigit: modulo10(pieces.thirdPiece)
+    };
+
+    if (calculatedDigits.secondDigit != digits.firstDigit || calculatedDigits.firstDigit != digits.secondDigit || calculatedDigits.thirdDigit != digits.thirdDigit) {
+      return false;
+    }
+
+    return true;
+  };
 
   /**
    * CNPJ validate.
@@ -118,6 +189,26 @@ var Util = (function (parent, $) {
   };
 
   /**
+   * Date now Br Format.
+   *
+   * @return {string}
+   */
+  date.nowBr = function () {
+    var that = new Date();
+    return (that.getDate() < 10 ? "0" : "") + that.getDate() + "/" + (that.getMonth() + 1 < 10 ? "0" : "") + (that.getMonth() + 1) + "/" + that.getFullYear();
+  };
+
+  /**
+   * Date now SQL Format.
+   *
+   * @return {string}
+   */
+  date.nowSql = function () {
+    var that = new Date();
+    return that.getFullYear() + "-" + (that.getMonth() + 1 < 10 ? "0" : "") + (that.getMonth() + 1) + "-" + (that.getDate() < 10 ? "0" : "") + that.getDate();
+  };
+
+  /**
    * Form clear.
    *
    * @param {string}
@@ -186,6 +277,162 @@ var Util = (function (parent, $) {
     return window.setTimeout(function () {
       window.location.href = href;
     }, time);
+  };
+
+  /**
+   * How to run the mask
+   *
+   *   Ex HTML: <input id="dt" value="" onkeydown="Util.mask.exec(this, Util.mask.date)" type="text" maxlength="10" >
+   *
+   *   Ex JS: var v = document.getElementById('dt');
+   *          Util.mask.exec(v, Util.mask.date);
+   *
+   * @param {element, string}
+   * @return {boolean}
+   */
+  mask.exec = function (o, f) {
+    var v_obj = o;
+    var v_fun = f;
+
+    setTimeout(v_obj.value = v_fun(v_obj.value), 1);
+    return true;
+  };
+
+  /**
+   * Mask Date Br Format
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.dateBr = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d{2})(\d)/, "$1/$2").replace(/(\d{2})(\d)/, "$1/$2");
+  };
+
+  /**
+   * Mask Hour
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.hour = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d{2})(\d)/, "$1:$2");
+  };
+
+  /**
+   * Mask Telephone
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.tel = function (value) {
+    return value.replace(/\D/g, "").replace(/^(\d\d)(\d)/g, "($1) $2").replace(/(\d{4})(\d)/, "$1 - $2");
+  };
+
+  /**
+   * Mask CEP
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cep = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d{2})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1-$2");
+  };
+
+  /**
+   * Mask CPF
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cpf = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d)/, "$1.$2").replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+  };
+
+  /**
+   * Mask CNPJ
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cnpj = function (value) {
+    return value.replace(/\D/g, "").replace(/^(\d{2})(\d)/, "$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3").replace(/\.(\d{3})(\d)/, ".$1/$2").replace(/(\d{4})(\d)/, "$1-$2");
+  };
+
+  /**
+   * Mask CNPJ or CPF
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cnpjcpf = function (value) {
+    if (value.length > 14) {
+      return Mask.mcnpj(value);
+    }
+
+    return Mask.mcpf(value);
+  };
+
+  /**
+   * Mask Number (only number)
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.number = function (value) {
+    return value.replace(/\D/g, "");
+  };
+
+  /**
+   * Mask Currency
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currency = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d)(\d{2})$/, "$1.$2");
+  };
+
+  /**
+   * Mask Currency Br
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currencyBr = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d)(\d{2})$/, "$1,$2");
+  };
+
+  /**
+   * Mask Currency Br Focus Out
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currencyBrFocusOut = function (value) {
+    if (value.indexOf(",") != -1) {
+      value = value.split(",");
+      var t = value[0].replace(/\D/g, "");
+      var d = value[1].replace(/\D/g, "");
+      if (d.length == 1) {
+        d = d + "0";
+      }
+      value = t + "," + d;
+    } else {
+      value = value.replace(/\D/g, "");
+      if (value == "") return "";
+      value = value + ",00";
+    }
+    return value;
+  };
+
+  /**
+   * Mask CFOP
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cfop = function (value) {
+    return value.replace(/\D/g, "").replace(/(\d{1})(\d)/, "$1.$2");
   };
 
   /**
@@ -298,6 +545,16 @@ var Util = (function (parent, $) {
     });
 
     return vlr;
+  };
+
+  /**
+   * Time now.
+   *
+   * @return {string}
+   */
+  time.now = function () {
+    var that = new Date();
+    return (that.getHours() < 10 ? "0" : "") + that.getHours() + ":" + (that.getMinutes() < 10 ? "0" : "") + that.getMinutes() + ":" + (that.getSeconds() < 10 ? "0" : "") + that.getSeconds();
   };
 
   return parent;
