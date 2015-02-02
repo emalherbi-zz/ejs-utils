@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ejs-utils Test</title>
+    <link rel="stylesheet" href="qunit.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="../dist/ejs-utils.3.0.0.js"></script>
+    <script src="qunit.js"></script>
+</body>
+<script>
+test('Util.cnpj.validate', function () {
+    var input = Util.cnpj.validate('62173620000180'),
+        expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.cnpj.validate - with Mask', function () {
+    var input = Util.cnpj.validate('621.736.200/001-80'),
+        expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.cpf.validate', function () {
+    var input = Util.cpf.validate('29727693172'),
+        expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.cpf.validate - with Mask', function () {
+    var input = Util.cpf.validate('297.276.931-72'),
+        expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.money.formatBr', function () {
+    var input = Util.money.formatBr(100.12),
+        expected = "100,12";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.money.formatUs', function () {
+    var input = Util.money.formatUs('100,12'),
+        expected = 100.12;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.number.only', function () {
+    var input = Util.number.only('100^%u&.12'),
+        expected = 10012;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.string.addLeft', function () {
+    var input = Util.string.addLeft('1', '5'),
+        expected = "00001";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.string.trim', function () {
+    var input = Util.string.trim(' 100^%u&.12    '),
+        expected = '100^%u&.12';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+</script>
+</html>

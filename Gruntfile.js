@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             ' */\n',
 
     /* clean directories */
-    clean: ['<%= properties.dist %>'],
+    clean: ['<%= properties.dist %>', '<%= properties.temp %>'],
 
     /* concat files */
     concat: {
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       basic_and_extras: {
         files: {
            "<%= properties.dist %>/<%= pkg.name %>.js" : ['<%= pkg.name %>.js'],
-           "<%= properties.dist %>/<%= pkg.name %>.es6.js" : ['<%= pkg.name %>.es6.js'],
+           "<%= properties.temp %>/<%= pkg.name %>.es6.js" : ['<%= pkg.name %>.es6.js'],
         },
       },
     },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '<%= properties.dist %>/<%= pkg.name %>.es5.js' : '<%= properties.dist %>/<%= pkg.name %>.es6.js'
+                '<%= properties.temp %>/<%= pkg.name %>.es5.js' : '<%= properties.temp %>/<%= pkg.name %>.es6.js'
             }
         }
     },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           dot: true,
-          cwd: '<%= properties.dist %>',
+          cwd: '<%= properties.temp %>',
           src: '<%= pkg.name %>.es5.js',
           dest: '<%= properties.dist %>/',
           rename: function(dest, src) {
