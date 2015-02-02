@@ -5,9 +5,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
   // Load the plugin that concatenate files.
   grunt.loadNpmTasks('grunt-contrib-concat');
+  // Turn ES6 code into vanilla ES5 with no runtime required using 6to5
+  require("load-grunt-tasks")(grunt);
   // Load the plugin that copy files and directories.
   grunt.loadNpmTasks('grunt-contrib-copy');
-	// Load the plugin that minify and concatenate ".js" files.
+  // Load the plugin that minify and concatenate ".js" files.
 	grunt.loadNpmTasks('grunt-contrib-uglify');
   // Run shell commands
   grunt.loadNpmTasks('grunt-shell');
@@ -40,9 +42,45 @@ module.exports = function(grunt) {
       basic_and_extras: {
         files: {
            "<%= properties.dist %>/<%= pkg.name %>.js" : ['<%= pkg.name %>.js'],
-           "<%= properties.dist %>/<%= pkg.name %>.3.0.0.js" : ['<%= pkg.name %>.3.0.0.js'],
+           "<%= properties.dist %>/<%= pkg.name %>.es6.js" : ['<%= pkg.name %>.es6.js'],
         },
       },
+    },
+
+    /* Turn ES6 code into vanilla ES5 with no runtime required using 6to5 */
+    '6to5': {
+        options: {
+            sourceMap: false
+        },
+        dist: {
+            files: {
+                '<%= properties.dist %>/<%= pkg.name %>.es5.js' : '<%= properties.dist %>/<%= pkg.name %>.es6.js'
+            }
+        }
+    },
+
+    /* put files not handled in other tasks here */
+    copy: {
+      '6to5': {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= properties.dist %>',
+          src: '<%= pkg.name %>.es5.js',
+          dest: '<%= properties.dist %>/',
+          rename: function(dest, src) {
+            return dest + src.replace("es5", "3.0.0");
+          }
+        }]
+      },
+      site: {
+        files: [{
+          expand: true,
+          dot: true,
+          src: ['<%= properties.dist %>/*.js'],
+          dest: 'docs/_site'
+        }]
+      }
     },
 
     /* js file minification */
@@ -53,7 +91,7 @@ module.exports = function(grunt) {
       build: {
         files: {
           '<%= properties.dist %>/<%= pkg.name %>.min.js': ['<%= properties.dist %>/<%= pkg.name %>.js'],
-          '<%= properties.dist %>/<%= pkg.name %>.3.0.0.min.js': ['<%= properties.dist %>/<%= pkg.name %>.3.0.0.js']
+          '<%= properties.dist %>/<%= pkg.name %>.3.0.0.min.js': ['<%= properties.dist %>/<%= pkg.name %>.3.0.0.js'],
         }
       }
     },
@@ -62,18 +100,6 @@ module.exports = function(grunt) {
     shell: {
       jekyllBuild: {
         command: 'jekyll build --source docs --destination docs/_site'
-      }
-    },
-
-    /* put files not handled in other tasks here */
-    copy: {
-      site: {
-        files: [{
-          expand: true,
-          dot: true,
-          src: ['dist/*.js'],
-          dest: 'docs/_site'
-        }]
       }
     },
 
@@ -104,6 +130,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
       'clean',
       'concat',
+      '6to5',
+      'copy:6to5',
       'uglify',
       'shell',
       'copy:site',

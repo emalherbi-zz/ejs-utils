@@ -1,6 +1,6 @@
 /*!
- * ejs-utils v2.0.39 (http://emalherbi.github.io/ejs-utils/)
- * Copyright 2010-2014 emalherbi
+ * ejs-utils v3.0.0 (http://emalherbi.github.io/ejs-utils/)
+ * Copyright 2010-2015 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
 /* Go To the Top of Body With Animate */
