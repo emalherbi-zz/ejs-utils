@@ -9,11 +9,33 @@
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
 
+    <div>
+      <input id="dt1" value="31101986" type="text" maxlength="10" >
+    </div>
+    <div>
+      <input id="dt2" value="" onkeydown="Util.mask.exec(this, Util.mask.date)" type="text" maxlength="10" >
+    </div>
+
+    <!-- var v = document.getElementById('dt');
+    Util.mask.exec(v, Util.mask.date) -->
+
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="../dist/ejs-utils.3.0.0.js"></script>
     <script src="qunit.js"></script>
 </body>
 <script>
+test('Util.cmc7.validate', function () {
+    var input = Util.cmc7.validate('341003630010000055200005306998'),
+        expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+// test('Util.cmc7.validate', function () {
+//     var input = Util.cmc7.validate('341003630010000055200005306997'),
+//         expected = true;
+//
+//     equal(input, expected, 'This should work with no problem.');
+// });
 test('Util.cnpj.validate', function () {
     var input = Util.cnpj.validate('62173620000180'),
         expected = true;
@@ -35,6 +57,18 @@ test('Util.cpf.validate', function () {
 test('Util.cpf.validate - with Mask', function () {
     var input = Util.cpf.validate('297.276.931-72'),
         expected = true;
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.nowBr - BR Format', function () {
+    var input = Util.date.nowBr(),
+        expected = '02/02/2015';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.nowSql - SQL Format', function () {
+    var input = Util.date.nowSql(),
+        expected = '2015-02-02';
 
     equal(input, expected, 'This should work with no problem.');
 });

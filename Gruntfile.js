@@ -128,22 +128,26 @@ module.exports = function(grunt) {
 
 	// tasks
   grunt.registerTask('build', [
-      'clean',
-      'concat',
-      '6to5',
-      'copy:6to5',
-      'uglify',
-      'shell',
-      'copy:site',
-      'gh-pages',
-      'bump'
+    'clean',
+    'concat',
+    '6to5',
+    'copy:6to5',
+    'uglify'
   ]);
 
   grunt.registerTask('deploy', [
-      'build'
+    'clean',
+    'concat',
+    '6to5',
+    'copy:6to5',
+    'uglify',
+    'shell',
+    'copy:site',
+    'gh-pages',
+    'bump'
   ]);
 
   grunt.registerTask('default', [
-      'build'
+    'build'
   ]);
 };

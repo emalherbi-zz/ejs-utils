@@ -1,17 +1,90 @@
-// 6to5 ejs-utils.ES6.js --out-file ejs-utils.ES5.js
-
 var Util = ((parent, $) => {
 
+  let cmc7 = parent.cmc7 = parent.cmc7 || {};
   let cnpj = parent.cnpj = parent.cnpj || {};
   let cpf = parent.cpf = parent.cpf || {};
+  let date = parent.date = parent.date || {};
   let form = parent.form = parent.form || {};
   let html = parent.html = parent.html || {};
   let input = parent.input = parent.input || {};
   let link = parent.link = parent.link || {};
+  let mask = parent.mask = parent.mask || {};
   let money = parent.money = parent.money || {};
   let number = parent.number = parent.number || {};
   let string = parent.string = parent.string || {};
   let table = parent.table = parent.table || {};
+  let time = parent.time = parent.time || {};
+
+  /**
+   * CMC7 validate.
+   *
+   * @param {string}
+   * @return {boolean}
+   */
+  cmc7.validate = (typedValue) => {
+    let mod = (dividend, divisor)
+      => Math.round(dividend - (Math.floor(dividend/divisor)*divisor));
+
+    let modulo10 = (str) => {
+      let size = str.length - 1;
+      let result = 0;
+      let weight = 2;
+
+      for (let i = size; i >= 0; i--) {
+
+        let total = str.substr(i, 1) * weight;
+
+        if (total > 9) {
+          result = result + 1 + (total - 10);
+        } else {
+          result = result + total;
+        }
+        if (weight == 1) {
+          weight = 2;
+        } else {
+          weight = 1;
+        }
+      }
+      let dv = 10 - mod(result, 10);
+      if (dv == 10) {
+        dv = 0;
+      }
+
+      return dv;
+    }
+
+    typedValue = typedValue.replace(/\D/g, '');
+    typedValue = typedValue.replace(/\s/g, "");
+    if (!typedValue) {
+      return false;
+    }
+
+    var pieces = {
+      firstPiece : typedValue.substr(0,7)
+      , secondPiece : typedValue.substr(8,10)
+      , thirdPiece : typedValue.substr(19,10)
+    };
+
+    var digits = {
+      firstDigit : parseInt(typedValue.substr(7,1))
+      , secondDigit : parseInt(typedValue.substr(18,1))
+      , thirdDigit : parseInt(typedValue.substr(29,1))
+    };
+
+    var calculatedDigits = {
+      firstDigit : modulo10(pieces.firstPiece)
+      , secondDigit : modulo10(pieces.secondPiece)
+      , thirdDigit : modulo10(pieces.thirdPiece)
+    };
+
+    if ( (calculatedDigits.secondDigit != digits.firstDigit)
+      || (calculatedDigits.firstDigit != digits.secondDigit)
+      || (calculatedDigits.thirdDigit != digits.thirdDigit) ) {
+      return false;
+    }
+
+    return true;
+  };
 
   /**
    * CNPJ validate.
@@ -126,6 +199,26 @@ var Util = ((parent, $) => {
   }
 
   /**
+   * Date now Br Format.
+   *
+   * @return {string}
+   */
+  date.nowBr = () => {
+    var that = new Date();
+    return ((that.getDate() < 10)?"0":"") + that.getDate() + "/" + (((that.getMonth()+1) < 10)?"0":"") + (that.getMonth()+1) + "/" + that.getFullYear()
+  }
+
+  /**
+   * Date now SQL Format.
+   *
+   * @return {string}
+   */
+  date.nowSql = () => {
+    var that = new Date();
+    return that.getFullYear() + "-" + (((that.getMonth()+1) < 10)?"0":"") + (that.getMonth()+1) + "-" + ((that.getDate() < 10)?"0":"") + that.getDate();
+  }
+
+  /**
    * Form clear.
    *
    * @param {string}
@@ -188,6 +281,153 @@ var Util = ((parent, $) => {
    */
   link.timeout = (href, time)
     => window.setTimeout(() => {window.location.href = href}, time);
+
+  /**
+   * How to run the mask
+   *
+   *   Ex HTML: <input id="dt" value="" onkeydown="Util.mask.exec(this, Util.mask.date)" type="text" maxlength="10" >
+   *
+   *   Ex JS: var v = document.getElementById('dt');
+   *          Util.mask.exec(v, Util.mask.date);
+   *
+   * @param {element, string}
+   * @return {boolean}
+   */
+  mask.exec = (o, f) => {
+    let v_obj = o;
+    let v_fun = f;
+
+    setTimeout(v_obj.value=v_fun(v_obj.value), 1);
+    return true;
+  }
+
+  /**
+   * Mask Date Br Format
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.dateBr = (value)
+    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1/$2").replace(/(\d{2})(\d)/,"$1/$2")
+
+  /**
+   * Mask Hour
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.hour = (value)
+    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1:$2")
+
+  /**
+   * Mask Telephone
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.tel = (value)
+    => value.replace(/\D/g,"").replace(/^(\d\d)(\d)/g,"($1) $2").replace(/(\d{4})(\d)/,"$1 - $2")
+
+  /**
+   * Mask CEP
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cep = (value)
+    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1-$2")
+
+  /**
+   * Mask CPF
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cpf = (value)
+    => value.replace(/\D/g,"").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+
+  /**
+   * Mask CNPJ
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cnpj = (value)
+    => value.replace(/\D/g,"").replace(/^(\d{2})(\d)/,"$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d)/,".$1/$2").replace(/(\d{4})(\d)/,"$1-$2")
+
+  /**
+   * Mask CNPJ or CPF
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cnpjcpf = (value) => {
+    if (value.length > 14) {
+      return Mask.mcnpj(value);
+    }
+
+    return Mask.mcpf(value);
+  }
+
+  /**
+   * Mask Number (only number)
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.number = (value)
+    => value.replace(/\D/g, "")
+
+  /**
+   * Mask Currency
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currency = (value)
+    => value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1.$2")
+
+  /**
+   * Mask Currency Br
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currencyBr = (value)
+    => value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1,$2")
+
+  /**
+   * Mask Currency Br Focus Out
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.currencyBrFocusOut = (value) => {
+    if ( value.indexOf(',') != -1 ) {
+      value = value.split(",");
+      var t = value[0].replace(/\D/g,"");
+      var d = value[1].replace(/\D/g,"");
+      if ( d.length == 1 ) {
+        d = d + '0';
+      }
+      value = t + ',' + d;
+    }
+    else {
+      value = value.replace(/\D/g,"");
+      if ( value == '' ) return '';
+      value = value + ',00';
+    }
+    return value;
+  }
+
+  /**
+   * Mask CFOP
+   *
+   * @param {string}
+   * @return {string}
+   */
+  mask.cfop = (value)
+    => value.replace(/\D/g,"").replace(/(\d{1})(\d)/,"$1.$2")
 
   /**
    * Format currency to currency Br.
@@ -300,6 +540,16 @@ var Util = ((parent, $) => {
 
     return vlr;
   };
+
+  /**
+   * Time now.
+   *
+   * @return {string}
+   */
+  time.now = () => {
+    var that = new Date();
+    return ((that.getHours() < 10)?"0":"") + that.getHours() +":"+ ((that.getMinutes() < 10)?"0":"") + that.getMinutes() +":"+ ((that.getSeconds() < 10)?"0":"") + that.getSeconds();
+  }
 
   return parent;
 
