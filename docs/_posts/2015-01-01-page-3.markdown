@@ -1,11 +1,8 @@
 ---
 layout : default
 name : test
-title : Google Web Fonts and<br>Font Awesome Icons
+title : Test
 description : |
-  <p class="lead">This template features the 'Lato' font,
-  part of the <a target="_blank" href="http://www.google.com/fonts">Google
-  Web Font library</a>, as well as <a target="_blank"
-  href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+  <p class="lead">QUnit is a powerful, easy-to-use JavaScript unit testing framework. It's used by the jQuery, jQuery UI and jQuery Mobile projects and is capable of testing any generic JavaScript code, <a target="_blank" href="https://github.com/jquery/qunit/tree/master/test">including itself!</a>
 
 ---

@@ -15,3 +15,10 @@
 .ted:after {
   background-size: 40px;
 }
+
+/* imgs */
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
