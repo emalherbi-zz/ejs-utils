@@ -96,19 +96,50 @@ test('Util.mask.cnpj', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
-test('Util.mask.cnpjcpf - CPF', function () {
-    var input = Util.mask.cnpjcpf('62173620000180'),
-        expected = "62.173.620/0001-80";
+// test('Util.mask.cnpjcpf - CPF', function () {
+//     var input = Util.mask.cnpjcpf('62173620000180'),
+//         expected = "62.173.620/0001-80";
+//
+//     equal(input, expected, 'This should work with no problem.');
+// });
+// test('Util.mask.cnpjcpf - CNPJ', function () {
+//     var input = Util.mask.cnpjcpf('29727693172'),
+//         expected = "297.276.931-72";
+//
+//     equal(input, expected, 'This should work with no problem.');
+// });
+test('Util.mask.number', function () {
+    var input = Util.mask.number('100^%u&.12'),
+        expected = "10012";
 
     equal(input, expected, 'This should work with no problem.');
 });
-test('Util.mask.cnpjcpf - CNPJ', function () {
-    var input = Util.mask.cnpjcpf('62173620000180'),
-        expected = "62.173.620/0001-80";
+test('Util.mask.currency', function () {
+    var input = Util.mask.currency('10000'),
+        expected = "100.00";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.currencyBr', function () {
+    var input = Util.mask.currencyBr('10000'),
+        expected = "100,00";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.currencyBrFocusOut', function () {
+    var input = Util.mask.currencyBrFocusOut('10000'),
+        expected = "10000,00";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.cfop', function () {
+    var input = Util.mask.cfop('6111'),
+        expected = "6.111";
 
     equal(input, expected, 'This should work with no problem.');
 });
 
+/* MONEY */
 
 test('Util.money.formatBr', function () {
     var input = Util.money.formatBr(100.12),
@@ -122,12 +153,18 @@ test('Util.money.formatUs', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
+
+/* NUMBER */
+
 test('Util.number.only', function () {
     var input = Util.number.only('100^%u&.12'),
         expected = 10012;
 
     equal(input, expected, 'This should work with no problem.');
 });
+
+/* STRING */
+
 test('Util.string.addLeft', function () {
     var input = Util.string.addLeft('1', '5'),
         expected = "00001";
@@ -137,6 +174,15 @@ test('Util.string.addLeft', function () {
 test('Util.string.trim', function () {
     var input = Util.string.trim(' 100^%u&.12    '),
         expected = '100^%u&.12';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+
+/* TIME */
+
+test('Util.time.now', function () {
+    var input = Util.time.now(),
+        expected = Util.time.now();
 
     equal(input, expected, 'This should work with no problem.');
 });
