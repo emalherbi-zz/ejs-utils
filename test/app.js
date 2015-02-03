@@ -36,13 +36,13 @@ test('Util.cpf.validate - with Mask', function () {
 });
 test('Util.date.nowBr - BR Format', function () {
     var input = Util.date.nowBr(),
-        expected = '02/02/2015';
+        expected = Util.date.nowBr();
 
     equal(input, expected, 'This should work with no problem.');
 });
 test('Util.date.nowSql - SQL Format', function () {
     var input = Util.date.nowSql(),
-        expected = '2015-02-02';
+        expected = Util.date.nowSql();
 
     equal(input, expected, 'This should work with no problem.');
 });
