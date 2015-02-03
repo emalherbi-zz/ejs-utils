@@ -1,5 +1,11 @@
----
-theme :
-  name : dbyll
----
-{% include default.html %}
+<!DOCTYPE html>
+<html>
+	{% include include-css.html %}
+
+	<body>
+		{% include header.html %}
+		{% include body.html %}
+		{% include footer.html %}
+		{% include include-js.html %}
+	</body>
+</html>

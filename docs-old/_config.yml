@@ -1,0 +1,32 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 100 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+markdown: kramdown
+google-analytics-tracking-id: UA-52901652-2
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: ejs-utils
+
+description:
+author:
+  name: emalherbi and ivanhoinacki
+  email:
+  github: emalherbi
+  github2: ivanhoinacki
+  twitter:
+  siteAuthor1: emalherbi.com
+  siteAuthor2:  ivanhoinacki.com
+  bio: Functions in jquery, jquery-ui, to help developers in simple situations of your workday!
+  email_md5:
+
+rss_path:
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH: http://emalherbi.github.io/ejs-utils

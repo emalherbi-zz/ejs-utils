@@ -1,0 +1,32 @@
+<div class="banner ted pb-pattern o-lines-bold">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                {% for github in site.github %}
+                <iframe src="https://ghbtns.com/github-btn.html?user={{ github.user }}&repo={{ github.repo }}&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user={{ github.user }}&repo={{ github.repo }}&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user={{ github.user }}&repo={{ github.repo }}&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+                {% endfor %}
+            </div>
+        </div>
+        <hr class="intro-divider">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                {% for github in site.github %}
+                <iframe src="https://ghbtns.com/github-btn.html?user={{ github.user }}&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <p class="copyright text-muted small">Copyright &copy; {{ site.name }} All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
