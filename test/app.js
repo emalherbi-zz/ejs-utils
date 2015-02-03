@@ -72,13 +72,42 @@ test('Util.mask.hour', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
-test('Util.mask.hour', function () {
-    var input = Util.mask.hour('1320'),
-        expected = "13:20";
+test('Util.mask.telBr', function () {
+    var input = Util.mask.telBr('4699000011'),
+        expected = "(46) 9900 - 0011";
 
     equal(input, expected, 'This should work with no problem.');
 });
+test('Util.mask.cep', function () {
+    var input = Util.mask.cep('95701320'),
+        expected = "95.701-320";
 
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.cpf', function () {
+    var input = Util.mask.cpf('29727693172'),
+        expected = "297.276.931-72";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.cnpj', function () {
+    var input = Util.mask.cnpj('62173620000180'),
+        expected = "62.173.620/0001-80";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.cnpjcpf - CPF', function () {
+    var input = Util.mask.cnpjcpf('62173620000180'),
+        expected = "62.173.620/0001-80";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.cnpjcpf - CNPJ', function () {
+    var input = Util.mask.cnpjcpf('62173620000180'),
+        expected = "62.173.620/0001-80";
+
+    equal(input, expected, 'This should work with no problem.');
+});
 
 
 test('Util.money.formatBr', function () {

@@ -363,10 +363,10 @@ var Util = ((parent, $) => {
    */
   mask.cnpjcpf = (value) => {
     if (value.length > 14) {
-      return Mask.mcnpj(value);
+      return mask.mcnpj(value);
     }
 
-    return Mask.mcpf(value);
+    return mask.mcpf(value);
   }
 
   /**
