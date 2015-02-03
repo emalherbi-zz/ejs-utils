@@ -3,10 +3,128 @@ layout : default
 name : examples
 title : Examples
 description : |
-  <p class="lead">Turn your 2D designs into high quality, 3D
-  product shots in seconds using free Photoshop actions by <a
-  target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit
-  their website to download some of their awesome, free photoshop
-  actions!</p>
+
+  <!-- CMC7 -->
+
+  <div class="row">
+    <div class="col-lg-5 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CMC7</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="cmc7">CMC7 - Validate</label>
+              <input type="text" class="form-control" id="cmc7" placeholder="Enter CMC7" value="341003630010000055200005306998" >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CODE</h2>
+      <pre>Util.cmc7.validate('341003630010000055200005306998');</pre>
+    </div>
+  </div>
+
+  <!-- CNPJ -->
+
+  <div class="row">
+    <div class="col-lg-5 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CNPJ</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="cpf">CNPJ - Validate</label>
+              <input type="text" class="form-control" id="cnpj" placeholder="Enter CNPJ" value="62173620000180" >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CODE</h2>
+      <pre>Util.cnpj.validate('62173620000180');</pre>
+      <p class="lead"> OR </p>
+      <pre>Util.cnpj.validate('621.736.200/001-80');</pre>
+    </div>
+  </div>
+
+  <!-- CPF -->
+
+  <div class="row">
+    <div class="col-lg-5 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CPF</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="cpf">CPF - Validate</label>
+              <input type="text" class="form-control" id="cpf" placeholder="Enter CPF" value="29727693172" >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CODE</h2>
+      <pre>Util.cpf.validate('29727693172');</pre>
+      <p class="lead"> OR </p>
+      <pre>Util.cpf.validate('297.276.931-72');</pre>
+    </div>
+  </div>
+
+  <!-- DATE -->
+
+  <div class="row">
+    <div class="col-lg-5 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">DATE</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="dateBr">Date Now Format Br</label>
+              <input type="text" class="form-control" id="dateBr" value="" >
+            </div>
+            <button type="button" class="btn btn-default" id="btnDateBr" >Test</button>
+          </form>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="dateSql">Date Now Format SQL</label>
+              <input type="text" class="form-control" id="dateSql" value="" >
+            </div>
+            <button type="button" class="btn btn-default" id="btnDateSql" >Test</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">CODE</h2>
+      <pre>Util.date.nowBr();</pre>
+      <hr>
+      <div class="clearfix"></div>
+      <pre>Util.date.nowSql();</pre>
+    </div>
+  </div>
 
 ---
