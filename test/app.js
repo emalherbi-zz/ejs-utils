@@ -1,3 +1,5 @@
+/* CMC7 */
+
 test('Util.cmc7.validate', function () {
     var input = Util.cmc7.validate('341003630010000055200005306998'),
         expected = true;
@@ -10,6 +12,9 @@ test('Util.cmc7.validate', function () {
 //
 //     equal(input, expected, 'This should work with no problem.');
 // });
+
+/* CNPJ */
+
 test('Util.cnpj.validate', function () {
     var input = Util.cnpj.validate('62173620000180'),
         expected = true;
@@ -22,6 +27,9 @@ test('Util.cnpj.validate - with Mask', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
+
+/* CPF */
+
 test('Util.cpf.validate', function () {
     var input = Util.cpf.validate('29727693172'),
         expected = true;
@@ -34,6 +42,9 @@ test('Util.cpf.validate - with Mask', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
+
+/* DATE */
+
 test('Util.date.nowBr - BR Format', function () {
     var input = Util.date.nowBr(),
         expected = Util.date.nowBr();
@@ -46,6 +57,30 @@ test('Util.date.nowSql - SQL Format', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
+
+/* MASK */
+
+test('Util.mask.dateBr', function () {
+    var input = Util.mask.dateBr('01052015'),
+        expected = "01/05/2015";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.hour', function () {
+    var input = Util.mask.hour('1320'),
+        expected = "13:20";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.mask.hour', function () {
+    var input = Util.mask.hour('1320'),
+        expected = "13:20";
+
+    equal(input, expected, 'This should work with no problem.');
+});
+
+
+
 test('Util.money.formatBr', function () {
     var input = Util.money.formatBr(100.12),
         expected = "100,12";

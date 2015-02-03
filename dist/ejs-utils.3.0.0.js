@@ -1,7 +1,7 @@
 "use strict";
 
 /*!
- * ejs-utils v3.0.2 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v3.0.3 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2015 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
@@ -319,12 +319,12 @@ var Util = (function (parent, $) {
   };
 
   /**
-   * Mask Telephone
+   * Mask Telephone Br
    *
    * @param {string}
    * @return {string}
    */
-  mask.tel = function (value) {
+  mask.telBr = function (value) {
     return value.replace(/\D/g, "").replace(/^(\d\d)(\d)/g, "($1) $2").replace(/(\d{4})(\d)/, "$1 - $2");
   };
 

@@ -320,12 +320,12 @@ var Util = ((parent, $) => {
     => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1:$2")
 
   /**
-   * Mask Telephone
+   * Mask Telephone Br
    *
    * @param {string}
    * @return {string}
    */
-  mask.tel = (value)
+  mask.telBr = (value)
     => value.replace(/\D/g,"").replace(/^(\d\d)(\d)/g,"($1) $2").replace(/(\d{4})(\d)/,"$1 - $2")
 
   /**
