@@ -1,7 +1,7 @@
 "use strict";
 
 /*!
- * ejs-utils v3.0.6 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v3.0.7 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2015 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
