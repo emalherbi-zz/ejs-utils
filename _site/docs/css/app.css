@@ -1,0 +1,24 @@
+/* header */
+.masthead {
+  background-color: #04a5e6;
+  background-image: linear-gradient(to bottom, #542687, #04a5e6);
+  background-repeat: repeat-x;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* patternbolt */
+.ted {
+  background-color: #04a5e6;
+  background-image: linear-gradient(to bottom, #542687, #04a5e6);
+}
+.ted:after {
+  background-size: 40px;
+}
+
+/* imgs */
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
