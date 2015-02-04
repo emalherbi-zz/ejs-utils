@@ -1,6 +1,8 @@
 ejs-utils
 =========
 
+[![Bower](https://img.shields.io/bower/v/bootstrap.svg)](https://github.com/emalherbi/ejs-utils)
+
 Functions in javascript, jquery, jquery-ui, to help developers in simple situations of your workday. 
 <img align="right" height="150" src="http://bower.io/img/bower-logo.png">
 
