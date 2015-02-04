@@ -10,10 +10,10 @@ menuHome :
   - name : Home
     link : 'home'
 menu :
+  - name : Install
+    link : 'install'
   - name : Usage
     link : 'usage'
-  - name : Examples
-    link : 'examples'
   - name : Test
     link : 'test'
 

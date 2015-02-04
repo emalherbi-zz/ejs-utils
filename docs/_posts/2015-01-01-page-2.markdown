@@ -1,7 +1,7 @@
 ---
 layout : default
-name : examples
-title : Examples
+name : usage
+title : Usage
 description : |
 
   <!-- CMC7 -->

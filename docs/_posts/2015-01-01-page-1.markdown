@@ -1,16 +1,16 @@
 ---
 layout : default
-name : usage
-title : Usage
+name : install
+title : Install
 description : |
   <p class="lead">This package is available on Bower.</p>
   <br />
 
-  <h3>Installing</h3>
+  <h3>Bower.io</h3>
   <pre>$ bower install ejs-utils --save</pre>
   <br />
 
-  <h3>Install Bower.io</h3>
+  <h3>Install npm bower.io</h3>
   <pre>$ npm install -g bower</pre>
   <br />
 
