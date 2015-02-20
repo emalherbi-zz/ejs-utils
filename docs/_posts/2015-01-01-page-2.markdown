@@ -26,7 +26,7 @@ description : |
       <hr>
       <div class="clearfix"></div>
       <h2 class="section-heading">CODE</h2>
-      <pre>Util.cmc7.validate('341003630010000055200005306998');</pre>
+      <pre><code class="js" >Util.cmc7.validate('341003630010000055200005306998');</code></pre>
     </div>
   </div>
 
@@ -52,9 +52,9 @@ description : |
       <hr>
       <div class="clearfix"></div>
       <h2 class="section-heading">CODE</h2>
-      <pre>Util.cnpj.validate('62173620000180');</pre>
+      <pre><code class="js">Util.cnpj.validate('62173620000180');</code></pre>
       <p class="lead"> OR </p>
-      <pre>Util.cnpj.validate('621.736.200/001-80');</pre>
+      <pre><code class="js">Util.cnpj.validate('621.736.200/001-80');</code></pre>
     </div>
   </div>
 
@@ -80,9 +80,9 @@ description : |
       <hr>
       <div class="clearfix"></div>
       <h2 class="section-heading">CODE</h2>
-      <pre>Util.cpf.validate('29727693172');</pre>
+      <pre><code class="js">Util.cpf.validate('29727693172');</code></pre>
       <p class="lead"> OR </p>
-      <pre>Util.cpf.validate('297.276.931-72');</pre>
+      <pre><code class="js">Util.cpf.validate('297.276.931-72');</code></pre>
     </div>
   </div>
 
@@ -109,8 +109,8 @@ description : |
       <hr>
       <div class="clearfix"></div>
       <h2 class="section-heading">CODE</h2>
-      <pre># Date Now Format Br
-  Util.date.nowBr();</pre>
+      <pre><code class="js"># Date Now Format Br
+  Util.date.nowBr();</code></pre>
     </div>
   </div>
 
@@ -129,8 +129,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Date Now Format SQL
-  Util.date.nowSql();</pre>
+      <pre><code class="js"># Date Now Format SQL
+  Util.date.nowSql();</code></pre>
     </div>
   </div>  
 
@@ -146,7 +146,7 @@ description : |
           <form>
             <div class="form-group">
               <label for="dateBr">Mask to Date Format Br</label>
-              <input type="text" class="form-control" id="maskDateBr" value="" >
+              <input type="text" class="form-control" id="maskDateBr" value="" onkeydown="Util.mask.exec(this, Util.mask.dateBr)" maxlength="10" >
             </div>
           </form>
         </div>
@@ -156,8 +156,11 @@ description : |
       <hr>
       <div class="clearfix"></div>
       <h2 class="section-heading">CODE</h2>
-      <pre># Mask to Date Format Br
-  Util.mask.dateBr('01052015');</pre>
+      <pre><code class="js"># Mask to Date Format Br
+  Util.mask.dateBr('01052015');
+
+  # Or add the Mask on Input Field
+  &lt; input type="text" class="form-control" id="maskDateBr" value="" onkeydown="Util.mask.exec(this, Util.mask.dateBr)" maxlength="10" &gt;</code></pre>
     </div>
   </div>  
 
@@ -168,15 +171,18 @@ description : |
           <form>
             <div class="form-group">
               <label for="dateBr">Mask to Hour</label>
-              <input type="text" class="form-control" id="maskHour" value="" >
+              <input type="text" class="form-control" id="maskHour" value="" onkeydown="Util.mask.exec(this, Util.mask.hour)" maxlength="5" >
             </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Hour
-  Util.mask.hour('1320');</pre>
+      <pre><code class="js"># Mask to Hour
+  Util.mask.hour('1320');
+
+  # Or add the Mask on Input Field
+  &lt; input type="text" class="form-control" id="maskHour" value="" onkeydown="Util.mask.exec(this, Util.mask.hour)" maxlength="5" &gt;</code></pre>
     </div>
   </div>  
 
@@ -187,15 +193,18 @@ description : |
           <form>
             <div class="form-group">
               <label for="dateBr">Mask to Telephone Br</label>
-              <input type="text" class="form-control" id="maskTelBr" value="" >
+              <input type="text" class="form-control" id="maskTelBr" value="" onkeydown="Util.mask.exec(this, Util.mask.telBr)" maxlength="17" >
             </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Telephone Br
-  Util.mask.telBr('4299140801');</pre>
+      <pre><code class="js"># Mask to Telephone Br
+  Util.mask.telBr('4299140801');
+
+  # Or add the Mask on Input Field
+  &lt; input type="text" class="form-control" id="maskTelBr" value="" onkeydown="Util.mask.exec(this, Util.mask.telBr)" maxlength="17" &gt;</code></pre>
     </div>
   </div>  
 
@@ -206,15 +215,18 @@ description : |
           <form>
             <div class="form-group">
               <label for="dateBr">Mask to CEP</label>
-              <input type="text" class="form-control" id="maskCEP" value="" >
+              <input type="text" class="form-control" id="maskCEP" value="" onkeydown="Util.mask.exec(this, Util.mask.cep)" maxlength="11" >
             </div>
           </form>
         </div>
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to CEP
-  Util.mask.cep('95701320');</pre>
+      <pre><code class="js"># Mask to CEP
+  Util.mask.cep('95701320');
+
+  # Or add the Mask on Input Field
+  &lt; input type="text" class="form-control" id="maskCEP" value="" onkeydown="Util.mask.exec(this, Util.mask.cep)" maxlength="11" &gt;</code></pre>
     </div>
   </div>  
 
@@ -232,8 +244,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to CPF
-  Util.mask.cpf('29727693172');</pre>
+      <pre><code class="js"># Mask to CPF
+  Util.mask.cpf('29727693172');</code></pre>
     </div>
   </div>  
 
@@ -251,8 +263,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to CNPJ
-  Util.mask.cnpj('62173620000180');</pre>
+      <pre><code class="js"># Mask to CNPJ
+  Util.mask.cnpj('62173620000180');</code></pre>
     </div>
   </div>  
 
@@ -270,8 +282,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Number
-  Util.mask.number('100^%u&.12');</pre>
+      <pre><code class="js"># Mask to Number
+  Util.mask.number('100^%u&.12');</code></pre>
     </div>
   </div>
 
@@ -289,8 +301,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Currency
-  Util.mask.currency('10000');</pre>
+      <pre><code class="js"># Mask to Currency
+  Util.mask.currency('10000');</code></pre>
     </div>
   </div>
 
@@ -308,8 +320,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Currency Br
-  Util.mask.currencyBr('10000');</pre>
+      <pre><code class="js"># Mask to Currency Br
+  Util.mask.currencyBr('10000');</code></pre>
     </div>
   </div>  
 
@@ -327,8 +339,8 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to Currency Br Focus Out
-  Util.mask.currencyBrFocusOut('10000');</pre>
+      <pre><code class="js"># Mask to Currency Br Focus Out
+  Util.mask.currencyBrFocusOut('10000');</code></pre>
     </div>
   </div>
 
@@ -346,8 +358,16 @@ description : |
       </div>
     </div>
     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-      <pre># Mask to CFOP
-  Util.mask.cfop('6111');</pre>
+      <pre><code class="js"># Mask to CFOP
+  Util.mask.cfop('6111');</code></pre>
+    </div>
+  </div>  
+
+  <div class="row">
+    <div class="col-sm-12">
+      <hr>
+      <div class="clearfix"></div>
+      <h2 class="section-heading">to be continued...</h2>
     </div>
   </div>  
 

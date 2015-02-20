@@ -127,6 +127,16 @@ module.exports = function(grunt) {
 	});
 
 	// tasks
+  grunt.registerTask('_site', [
+    'clean',
+    'concat',
+    '6to5',
+    'copy:6to5',
+    'uglify',
+    'shell',
+    'copy:site'
+  ]);
+
   grunt.registerTask('build', [
     'clean',
     'concat',

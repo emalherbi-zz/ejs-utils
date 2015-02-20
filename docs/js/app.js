@@ -181,6 +181,8 @@ var MaskCFOP = {
 $( document ).ready(function() {
   console.log( "ready!" );
 
+  hljs.initHighlightingOnLoad();
+
   CMC7.test();
   $('#cmc7').focusout(function() {
     CMC7.test();
