@@ -1,4 +1,5 @@
 {
   "dist" : "dist",
-  "temp" : ".temp"
+  "temp" : ".temp",
+  "test" : "test"
 }

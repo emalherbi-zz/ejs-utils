@@ -201,6 +201,132 @@ var Data =
   timeNow : function() { /* using javascript */
     var that = new Date();
     return ((that.getHours() < 10)?"0":"") + that.getHours() +":"+ ((that.getMinutes() < 10)?"0":"") + that.getMinutes() +":"+ ((that.getSeconds() < 10)?"0":"") + that.getSeconds();
+  },
+
+  addDaysBr : function(date, param) {
+    date = date.split('/');
+
+    var day   = Number(date[0]);
+    var month = Number(date[1]);
+    var year  = Number(date[2]);
+
+    date = year + '-' + month + '-' + day;
+
+    var d = Data.add(date, 'day', param);
+    return d.split('-').reverse().join('/');
+  },
+  addDays : function(date, param) {
+    return Data.add(date, 'day', param);
+  },
+
+  addMonthBr : function(date, param) {
+    date = date.split('/');
+
+    var day   = Number(date[0]);
+    var month = Number(date[1]);
+    var year  = Number(date[2]);
+
+    date = year + '-' + month + '-' + day;
+
+    var d = Data.add(date, 'month', param);
+    return d.split('-').reverse().join('/');
+  },
+  addMonth : function(date, param) {
+    return Data.add(date, 'month', param);
+  },
+
+  addYearBr : function(date, param) {
+    date = date.split('/');
+
+    var day   = Number(date[0]);
+    var month = Number(date[1]);
+    var year  = Number(date[2]);
+
+    date = year + '-' + month + '-' + day;
+
+    var d = Data.add(date, 'year', param);
+    return d.split('-').reverse().join('/');
+  },
+  addYear : function(date, param) {
+    return Data.add(date, 'year', param);
+  },
+
+  add : function(date, type, param) {
+    date = date.split('-');
+
+    var year  = Number(date[0]);
+    var month = Number(date[1]);
+    var day   = Number(date[2]);
+
+    date = new Date(year, month, day);
+
+    if (type === 'day') {
+      date.setDate(date.getDate() + Number(param));
+    }
+    if (type === 'month') {
+      date.setMonth(date.getMonth() + Number(param));
+    }
+    if (type === 'year') {
+      date.setFullYear(date.getFullYear() + Number(param));
+    }
+
+    year  =  date.getFullYear();
+    month = (date.getMonth() < 10) ? "0" + date.getMonth() : date.getMonth();
+    day   = (date.getDate()  < 10) ? "0" + date.getDate()  : date.getDate();
+
+    month = (Number(month) == 0) ? '12' : month;
+    return year + '-' + month + '-' + day;
+  },
+
+  removeDaysBr : function(date, param) {
+    var d = Data.remove(date, 'day', param);
+    return d.split('-').reverse().join('/');
+  },
+  removeDays : function(date, param) {
+    return Data.remove(date, 'day', param);
+  },
+
+  removeMonthBr : function(date, param) {
+    var d = Data.remove(date, 'month', param);
+    return d.split('-').reverse().join('/');
+  },
+  removeMonth : function(date, param) {
+    return Data.remove(date, 'month', param);
+  },
+
+  removeYearBr : function(date, param) {
+    var d = Data.remove(date, 'year', param);
+    return d.split('-').reverse().join('/');
+  },
+  removeYear : function(date, param) {
+    return Data.remove(date, 'year', param);
+  },
+
+  remove : function(date, type, param) {
+    date = date.split('-');
+
+    var year  = Number(date[0]);
+    var month = Number(date[1]);
+    var day   = Number(date[2]);
+
+    date = new Date(year, month, day);
+
+    if (type === 'day') {
+      date.setDate(date.getDate() - Number(param));
+    }
+    if (type === 'month') {
+      date.setMonth(date.getMonth() - Number(param));
+    }
+    if (type === 'year') {
+      date.setFullYear(date.getFullYear() - Number(param));
+    }
+
+    year  =  date.getFullYear();
+    month = (date.getMonth() < 10) ? "0" + date.getMonth() : date.getMonth();
+    day   = (date.getDate()  < 10) ? "0" + date.getDate()  : date.getDate();
+
+    month = (Number(month) == 0) ? '12' : month;
+    return year + '-' + month + '-' + day;
   }
 };
 

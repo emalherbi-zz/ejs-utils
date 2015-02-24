@@ -57,6 +57,42 @@ test('Util.date.nowSql - SQL Format', function () {
 
     equal(input, expected, 'This should work with no problem.');
 });
+test('Util.date.addDaysBr', function () {
+    var input = Util.date.addDaysBr('24/02/2015', '2'),
+        expected = '26/02/2015';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.addMonthBr', function () {
+    var input = Util.date.addMonthBr('24/02/2015', '2'),
+        expected = '24/04/2015';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.addYearBr', function () {
+    var input = Util.date.addYearBr('24/02/2015', '2'),
+        expected = '24/02/2017';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.addDays', function () {
+    var input = Util.date.addDays('2015-02-24', '2'),
+        expected = '2015-02-26';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.addMonth', function () {
+    var input = Util.date.addMonth('2015-02-24', '2'),
+        expected = '2015-04-24';
+
+    equal(input, expected, 'This should work with no problem.');
+});
+test('Util.date.addYear', function () {
+    var input = Util.date.addYear('2015-02-24', '2'),
+        expected = '2017-02-24';
+
+    equal(input, expected, 'This should work with no problem.');
+});
 
 /* MASK */
 

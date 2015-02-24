@@ -80,6 +80,14 @@ module.exports = function(grunt) {
           src: ['<%= properties.dist %>/*.js'],
           dest: 'docs/_site'
         }]
+      },
+      test: {
+        files: [{
+          expand: true,
+          dot: true,
+          src: ['<%= properties.dist %>/*.js'],
+          dest: 'test'
+        }]
       }
     },
 
@@ -133,6 +141,7 @@ module.exports = function(grunt) {
     '6to5',
     'copy:6to5',
     'uglify',
+    'copy:test',
     'shell',
     'copy:site'
   ]);
@@ -142,7 +151,8 @@ module.exports = function(grunt) {
     'concat',
     '6to5',
     'copy:6to5',
-    'uglify'
+    'uglify',
+    'copy:test'
   ]);
 
   grunt.registerTask('deploy', [
@@ -151,6 +161,7 @@ module.exports = function(grunt) {
     '6to5',
     'copy:6to5',
     'uglify',
+    'copy:test',
     'shell',
     'copy:site',
     'gh-pages',

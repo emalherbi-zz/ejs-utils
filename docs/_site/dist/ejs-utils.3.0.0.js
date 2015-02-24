@@ -1,7 +1,7 @@
 "use strict";
 
 /*!
- * ejs-utils v3.0.8 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v3.0.9 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2015 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
@@ -206,6 +206,208 @@ var Util = (function (parent, $) {
   date.nowSql = function () {
     var that = new Date();
     return that.getFullYear() + "-" + (that.getMonth() + 1 < 10 ? "0" : "") + (that.getMonth() + 1) + "-" + (that.getDate() < 10 ? "0" : "") + that.getDate();
+  };
+
+  /**
+   * Date add Days Br.
+   *
+   * @return {string}
+   */
+  date.addDaysBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
+    var d = date.add(dt, "day", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date add Days.
+   *
+   * @return {string}
+   */
+  date.addDays = function (dt, param) {
+    return date.add(dt, "day", param);
+  };
+
+  /**
+   * Date add Month Br.
+   *
+   * @return {string}
+   */
+  date.addMonthBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
+    var d = date.add(dt, "month", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date add Month.
+   *
+   * @return {string}
+   */
+  date.addMonth = function (dt, param) {
+    return date.add(dt, "month", param);
+  };
+
+  /**
+   * Date add Year Br.
+   *
+   * @return {string}
+   */
+  date.addYearBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
+    var d = date.add(dt, "year", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date add Year.
+   *
+   * @return {string}
+   */
+  date.addYear = function (dt, param) {
+    return date.add(dt, "year", param);
+  };
+
+  /**
+   * Date add Day, Month or Year.
+   *
+   * @return {string}
+   */
+  date.add = function (dt, type, param) {
+    dt = dt.split("-");
+
+    var year = Number(dt[0]);
+    var month = Number(dt[1]);
+    var day = Number(dt[2]);
+
+    dt = new Date(year, month, day);
+
+    if (type === "day") {
+      dt.setDate(dt.getDate() + Number(param));
+    }
+    if (type === "month") {
+      dt.setMonth(dt.getMonth() + Number(param));
+    }
+    if (type === "year") {
+      dt.setFullYear(dt.getFullYear() + Number(param));
+    }
+
+    year = dt.getFullYear();
+    month = dt.getMonth() < 10 ? "0" + dt.getMonth() : dt.getMonth();
+    day = dt.getDate() < 10 ? "0" + dt.getDate() : dt.getDate();
+
+    month = Number(month) == 0 ? "12" : month;
+    return year + "-" + month + "-" + day;
+  };
+
+  /**
+   * Date remove Day Br.
+   *
+   * @return {string}
+   */
+  date.removeDaysBr = function (dt, param) {
+    var d = date.remove(dt, "day", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date remove Day.
+   *
+   * @return {string}
+   */
+  date.removeDays = function (dt, param) {
+    return date.remove(dt, "day", param);
+  };
+
+  /**
+   * Date remove Month Br.
+   *
+   * @return {string}
+   */
+  date.removeMonthBr = function (dt, param) {
+    var d = date.remove(dt, "month", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date remove Month.
+   *
+   * @return {string}
+   */
+  date.removeMonth = function (dt, param) {
+    return date.remove(dt, "month", param);
+  };
+
+  /**
+   * Date remove Year.
+   *
+   * @return {string}
+   */
+  date.removeYearBr = function (dt, param) {
+    var d = date.remove(dt, "year", param);
+    return d.split("-").reverse().join("/");
+  };
+
+  /**
+   * Date remove Year.
+   *
+   * @return {string}
+   */
+  date.removeYear = function (dt, param) {
+    return date.remove(dt, "year", param);
+  };
+
+  /**
+   * Date remove Day, Month, Year.
+   *
+   * @return {string}
+   */
+  date.remove = function (dt, type, param) {
+    dt = dt.split("-");
+
+    var year = Number(dt[0]);
+    var month = Number(dt[1]);
+    var day = Number(dt[2]);
+
+    dt = new Date(year, month, day);
+
+    if (type === "day") {
+      dt.setDate(dt.getDate() - Number(param));
+    }
+    if (type === "month") {
+      dt.setMonth(dt.getMonth() - Number(param));
+    }
+    if (type === "year") {
+      dt.setFullYear(dt.getFullYear() - Number(param));
+    }
+
+    year = dt.getFullYear();
+    month = dt.getMonth() < 10 ? "0" + dt.getMonth() : dt.getMonth();
+    day = dt.getDate() < 10 ? "0" + dt.getDate() : dt.getDate();
+
+    month = Number(month) == 0 ? "12" : month;
+    return year + "-" + month + "-" + day;
   };
 
   /**
