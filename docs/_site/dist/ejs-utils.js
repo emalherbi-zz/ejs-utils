@@ -1,5 +1,5 @@
 /*!
- * ejs-utils v3.1.0 (http://emalherbi.github.io/ejs-utils/)
+ * ejs-utils v3.1.2 (http://emalherbi.github.io/ejs-utils/)
  * Copyright 2010-2016 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */

@@ -1,6 +1,6 @@
 {
   "name": "ejs-utils",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "description": "The Javascript Utils!",
   "main": "ejs-utils.js",
   "dependencies": {
