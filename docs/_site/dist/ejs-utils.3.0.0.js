@@ -1,8 +1,8 @@
 "use strict";
 
 /*!
- * ejs-utils v3.0.9 (http://emalherbi.github.io/ejs-utils/)
- * Copyright 2010-2015 emalherbi
+ * ejs-utils v3.1.0 (http://emalherbi.github.io/ejs-utils/)
+ * Copyright 2010-2016 emalherbi
  * Licensed under MIT (http://en.wikipedia.org/wiki/MIT_License)
  */
 var Util = (function (parent, $) {
@@ -327,6 +327,14 @@ var Util = (function (parent, $) {
    * @return {string}
    */
   date.removeDaysBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
     var d = date.remove(dt, "day", param);
     return d.split("-").reverse().join("/");
   };
@@ -346,6 +354,14 @@ var Util = (function (parent, $) {
    * @return {string}
    */
   date.removeMonthBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
     var d = date.remove(dt, "month", param);
     return d.split("-").reverse().join("/");
   };
@@ -365,6 +381,14 @@ var Util = (function (parent, $) {
    * @return {string}
    */
   date.removeYearBr = function (dt, param) {
+    dt = dt.split("/");
+
+    var day = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year = Number(dt[2]);
+
+    dt = year + "-" + month + "-" + day;
+
     var d = date.remove(dt, "year", param);
     return d.split("-").reverse().join("/");
   };
@@ -408,6 +432,31 @@ var Util = (function (parent, $) {
 
     month = Number(month) == 0 ? "12" : month;
     return year + "-" + month + "-" + day;
+  };
+
+  /**
+   * Get Years in array.
+   *
+   * Ex:  [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+   *
+   * @param {string}
+   *  => Start Year.
+   * @param {string}
+   *  => Finish Year.
+   *
+   * @return {array}
+   */
+  date.getYearsArray = function (startYear, finishYear) {
+    var years = [];
+
+    finishYear = finishYear || new Date().getFullYear();
+    startYear = startYear || 1990;
+
+    while (startYear <= finishYear) {
+      years.push(startYear++);
+    }
+
+    return years;
   };
 
   /**
@@ -476,7 +525,7 @@ var Util = (function (parent, $) {
    * @return {number}
    */
   link.timeout = function (href, time) {
-    return window.setTimeout(function () {
+    window.setTimeout(function () {
       window.location.href = href;
     }, time);
   };
@@ -567,7 +616,7 @@ var Util = (function (parent, $) {
    * @return {string}
    */
   mask.cnpjcpf = function (value) {
-    if (value.length > 14) {
+    if (value.length >= 14) {
       return mask.cnpj(value);
     }
 

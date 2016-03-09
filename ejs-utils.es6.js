@@ -22,8 +22,9 @@ let Util = ((parent, $) => {
    * @return {boolean}
    */
   cmc7.validate = (typedValue) => {
-    let mod = (dividend, divisor)
-      => Math.round(dividend - (Math.floor(dividend/divisor)*divisor));
+    let mod = (dividend, divisor) => {
+      return Math.round(dividend - (Math.floor(dividend/divisor)*divisor));
+    }
 
     let modulo10 = (str) => {
       let size = str.length - 1;
@@ -241,8 +242,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.addDays = (dt, param)
-    => date.add(dt, 'day', param);
+  date.addDays = (dt, param) => {
+    return date.add(dt, 'day', param);
+  }
 
   /**
    * Date add Month Br.
@@ -267,8 +269,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.addMonth = (dt, param)
-    => date.add(dt, 'month', param);
+  date.addMonth = (dt, param) => {
+    return date.add(dt, 'month', param);
+  }
 
   /**
    * Date add Year Br.
@@ -293,8 +296,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.addYear = (dt, param)
-    => date.add(dt, 'year', param);
+  date.addYear = (dt, param) => {
+    return date.add(dt, 'year', param);
+  }
 
   /**
    * Date add Day, Month or Year.
@@ -334,6 +338,14 @@ let Util = ((parent, $) => {
    * @return {string}
    */
   date.removeDaysBr = (dt, param) => {
+    dt = dt.split('/');
+
+    var day   = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year  = Number(dt[2]);
+
+    dt = year + '-' + month + '-' + day;
+
     var d = date.remove(dt, 'day', param);
     return d.split('-').reverse().join('/');
   }
@@ -343,8 +355,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.removeDays = (dt, param)
-    => date.remove(dt, 'day', param);
+  date.removeDays = (dt, param) => {
+    return date.remove(dt, 'day', param);
+  }
 
   /**
    * Date remove Month Br.
@@ -352,6 +365,14 @@ let Util = ((parent, $) => {
    * @return {string}
    */
   date.removeMonthBr = (dt, param) => {
+    dt = dt.split('/');
+
+    var day   = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year  = Number(dt[2]);
+
+    dt = year + '-' + month + '-' + day;
+
     var d = date.remove(dt, 'month', param);
     return d.split('-').reverse().join('/');
   }
@@ -361,8 +382,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.removeMonth = (dt, param)
-    => date.remove(dt, 'month', param);
+  date.removeMonth = (dt, param) => {
+    return date.remove(dt, 'month', param);
+  }
 
   /**
    * Date remove Year.
@@ -370,6 +392,14 @@ let Util = ((parent, $) => {
    * @return {string}
    */
   date.removeYearBr = (dt, param) => {
+    dt = dt.split('/');
+
+    var day   = Number(dt[0]);
+    var month = Number(dt[1]);
+    var year  = Number(dt[2]);
+
+    dt = year + '-' + month + '-' + day;
+
     var d = date.remove(dt, 'year', param);
     return d.split('-').reverse().join('/');
   }
@@ -379,8 +409,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  date.removeYear = (dt, param)
-    => date.remove(dt, 'year', param);
+  date.removeYear = (dt, param) => {
+    return date.remove(dt, 'year', param);
+  }
 
   /**
    * Date remove Day, Month, Year.
@@ -415,6 +446,31 @@ let Util = ((parent, $) => {
   }
 
   /**
+   * Get Years in array.
+   *
+   * Ex:  [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+   *
+   * @param {string}
+   *  => Start Year.
+   * @param {string}
+   *  => Finish Year.
+   *
+   * @return {array}
+   */
+  date.getYearsArray = (startYear, finishYear) => {
+    var years = [];
+
+    finishYear = finishYear || new Date().getFullYear();
+    startYear  = startYear  || 1990;
+
+    while (startYear <= finishYear) {
+      years.push(startYear++);
+    }
+
+    return years;
+  }
+
+  /**
    * Form clear.
    *
    * @param {string}
@@ -434,8 +490,9 @@ let Util = ((parent, $) => {
    *
    * @return {boolean}
    */
-  html.top = (duration='fast')
-    => $('html, body').animate({scrollTop:0}, duration).is(':animated') ? true : false;
+  html.top = (duration='fast') => {
+    return $('html, body').animate({scrollTop:0}, duration).is(':animated') ? true : false;
+  }
 
   /**
    * Set Input enabled.
@@ -475,8 +532,9 @@ let Util = ((parent, $) => {
    *
    * @return {number}
    */
-  link.timeout = (href, time)
-    => window.setTimeout(() => {window.location.href = href}, time);
+  link.timeout = (href, time) => {
+    window.setTimeout(() => {window.location.href = href}, time);
+  }
 
   /**
    * How to run the mask
@@ -503,8 +561,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.dateBr = (value)
-    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1/$2").replace(/(\d{2})(\d)/,"$1/$2")
+  mask.dateBr = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1/$2").replace(/(\d{2})(\d)/,"$1/$2");
+  }
 
   /**
    * Mask Hour
@@ -512,8 +571,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.hour = (value)
-    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1:$2")
+  mask.hour = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1:$2");
+  }
 
   /**
    * Mask Telephone Br
@@ -521,8 +581,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.telBr = (value)
-    => value.replace(/\D/g,"").replace(/^(\d\d)(\d)/g,"($1) $2").replace(/(\d{4})(\d)/,"$1 - $2")
+  mask.telBr = (value) => {
+    return value.replace(/\D/g,"").replace(/^(\d\d)(\d)/g,"($1) $2").replace(/(\d{4})(\d)/,"$1 - $2");
+  }
 
   /**
    * Mask CEP
@@ -530,8 +591,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.cep = (value)
-    => value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1-$2")
+  mask.cep = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d{2})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1-$2");
+  }
 
   /**
    * Mask CPF
@@ -539,8 +601,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.cpf = (value)
-    => value.replace(/\D/g,"").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+  mask.cpf = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+  }
 
   /**
    * Mask CNPJ
@@ -548,8 +611,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.cnpj = (value)
-    => value.replace(/\D/g,"").replace(/^(\d{2})(\d)/,"$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d)/,".$1/$2").replace(/(\d{4})(\d)/,"$1-$2")
+  mask.cnpj = (value) => {
+    return value.replace(/\D/g,"").replace(/^(\d{2})(\d)/,"$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d)/,".$1/$2").replace(/(\d{4})(\d)/,"$1-$2");
+  }
 
   /**
    * Mask CNPJ or CPF
@@ -558,7 +622,7 @@ let Util = ((parent, $) => {
    * @return {string}
    */
   mask.cnpjcpf = (value) => {
-    if (value.length > 14) {
+    if (value.length >= 14) {
       return mask.cnpj(value);
     }
 
@@ -571,8 +635,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.number = (value)
-    => value.replace(/\D/g, "")
+  mask.number = (value) => {
+    return value.replace(/\D/g, "");
+  }
 
   /**
    * Mask Currency
@@ -580,8 +645,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.currency = (value)
-    => value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1.$2")
+  mask.currency = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1.$2");
+  }
 
   /**
    * Mask Currency Br
@@ -589,8 +655,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.currencyBr = (value)
-    => value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1,$2")
+  mask.currencyBr = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d)(\d{2})$/,"$1,$2");
+  }
 
   /**
    * Mask Currency Br Focus Out
@@ -622,8 +689,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  mask.cfop = (value)
-    => value.replace(/\D/g,"").replace(/(\d{1})(\d)/,"$1.$2")
+  mask.cfop = (value) => {
+    return value.replace(/\D/g,"").replace(/(\d{1})(\d)/,"$1.$2");
+  }
 
   /**
    * Format currency to currency Br.
@@ -659,8 +727,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {number}
    */
-  money.formatUs = (num)
-    => Math.round(num.replace(/\./g, "").replace(/,/, ".") * 100) / 100;
+  money.formatUs = (num) => {
+    return Math.round(num.replace(/\./g, "").replace(/,/, ".") * 100) / 100;
+  }
 
   /**
    * Return only number from string
@@ -668,8 +737,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {Number}
    */
-  number.only = (str)
-    => Number(str.replace(/\D/g, ''));
+  number.only = (str) => {
+    return Number(str.replace(/\D/g, ''));
+  }
 
   /**
    * Add {@param} on left of string.
@@ -680,8 +750,9 @@ let Util = ((parent, $) => {
    *
    * @return {string}
    */
-  string.addLeft = (str, max)
-    => (str.length < max) ? string.addLeft("0" + str, max) : str;
+  string.addLeft = (str, max) => {
+    return (str.length < max) ? string.addLeft("0" + str, max) : str;
+  }
 
   /**
    * Remove whitespace from both sides of a string.
@@ -689,8 +760,9 @@ let Util = ((parent, $) => {
    * @param {string}
    * @return {string}
    */
-  string.trim = (str)
-    => str.replace(/^\s+|\s+$/g,"");
+  string.trim = (str) => {
+    return str.replace(/^\s+|\s+$/g,"");
+  }
 
   /**
    * Calculate the columns from Table in Br format.
@@ -701,8 +773,9 @@ let Util = ((parent, $) => {
    *  => column position
    * @return {number}
    */
-  table.calculateBr = (idTable, column)
-    => money.formatBr( table.calculateUs( idTable, column ) );
+  table.calculateBr = (idTable, column) => {
+    return money.formatBr(table.calculateUs(idTable, column));
+  }
 
   /**
    * Calculate the columns from Table in Us format.

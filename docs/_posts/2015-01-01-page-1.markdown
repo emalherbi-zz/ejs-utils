@@ -6,14 +6,13 @@ description : |
   <p class="lead">This package is available on Bower.</p>
   <br />
 
-  <h3>Bower.io</h3>
-  <pre>$ bower install ejs-utils --save</pre>
-  <br />
-
   <h3>Install npm bower.io</h3>
   <pre>$ npm install -g bower</pre>
   <br />
 
   <p class="lead">Bower depends on <a target="_blank" href="http://nodejs.org/">Node.js</a> and <a target="_blank" href="http://npmjs.org/">npm</a>. Also make sure that <a target="_blank" href="http://git-scm.com/">git</a> is installed as some bower packages require it to be fetched and installed.</p>
+  <br />
 
+  <h3>Bower.io</h3>
+  <pre>$ bower install ejs-utils --save</pre>
 ---
